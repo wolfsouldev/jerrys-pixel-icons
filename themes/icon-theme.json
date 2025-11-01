@@ -1,7 +1,7 @@
 {
   "iconDefinitions": {
     "_file": { "iconPath": "../icons/txt.png" },
-    "_folder": { "iconPath": "../icons/folder.png" },
+    "_folder": { "iconPath": "../icons/folder.svg" },
     "_folder_open": { "iconPath": "../icons/open-folder.png" },
     "js": { "iconPath": "../icons/js.png" },
     "ts": { "iconPath": "../icons/ts.png" },
@@ -114,7 +114,8 @@
     "sc": "scala",
     "prisma": "prisma",
     "graphql": "gql",
-    "gql": "gql"
+    "gql": "gql",
+    "*.module.*": "nest"
   },
   "fileNames": {
     "Dockerfile": "docker",
@@ -151,7 +152,7 @@
     "next.config.mjs": "next",
     "tailwind.config.js": "tailwind",
     "tailwind.config.ts": "tailwind",
-    "schema.prisma": "prisma"
+    "schema.prisma": "prisma",
   },
   "folderNames": {
     "src": "_folder",
