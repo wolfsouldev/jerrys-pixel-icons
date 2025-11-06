@@ -63,7 +63,11 @@
     "src":{"iconPath": "../icons/folders/src.png"},
     "src_open":{"iconPath": "../icons/folders/src-open.png"},
     "vscode":{"iconPath": "../icons/folders/vscode.png"},
-    "vscode_open":{"iconPath": "../icons/folders/vscode-open.png"}
+    "vscode_open":{"iconPath": "../icons/folders/vscode-open.png"},
+    "public":{"iconPath": "../icons/folders/public.png"},
+    "public_open":{"iconPath": "../icons/folders/public-open.png"},
+    "bin":{"iconPath": "../icons/folders/bin.png"},
+    "bin_open":{"iconPath": "../icons/folders/bin-open.png"}
   },
   "file": "_file",
   "folder": "_folder",
@@ -175,8 +179,11 @@
     ".git": "git_folder",
     ".vscode": "vscode",
     "assets": "assets",
-    "public": "_folder",
-    "static": "_folder"
+    "public": "public",
+    "static": "_folder",
+    "components": "components",
+    "controllers": "controller",
+    "bin":"bin"
   },
   "folderNamesExpanded": {
     "src": "src_open",
@@ -186,7 +193,10 @@
     ".git": "git_folder_open",
     ".vscode": "vscode_open",
     "assets": "assets_open",
-    "public": "_folder_open",
-    "static": "_folder_open"
+    "public": "public_open",
+    "static": "_folder_open",
+    "components": "components_open",
+    "controllers": "controller_open",
+    "bin":"bin_open"
   }
 }
