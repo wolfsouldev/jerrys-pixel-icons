@@ -52,7 +52,7 @@
     "bun": { "iconPath": "../icons/files/bun.png" },
     "gql": { "iconPath": "../icons/files/gql.png" },
 
-     "assets":{"iconPath": "../icons/folders/assets.png"},
+    "assets":{"iconPath": "../icons/folders/assets.png"},
     "assets_open":{"iconPath": "../icons/folders/assets-open.png"},
     "components":{"iconPath": "../icons/folders/components.png"},
     "components_open":{"iconPath": "../icons/folders/components-open.png"},
@@ -67,7 +67,12 @@
     "public":{"iconPath": "../icons/folders/public.png"},
     "public_open":{"iconPath": "../icons/folders/public-open.png"},
     "bin":{"iconPath": "../icons/folders/bin.png"},
-    "bin_open":{"iconPath": "../icons/folders/bin-open.png"}
+    "bin_open":{"iconPath": "../icons/folders/bin-open.png"},
+    "img" : {"iconPath": "../icons/files/png.png"},
+    "svg" :{"iconPath": "../icons/files/svg.png"},
+    "vid" :{"iconPath": "../icons/files/mp4.png"},
+    "aud" :{"iconPath": "../icons/files/mp3.png"}
+
   },
   "file": "_file",
   "folder": "_folder",
@@ -132,7 +137,17 @@
     "prisma": "prisma",
     "graphql": "gql",
     "gql": "gql",
-    "*.module.*": "nest"
+    "*.module.*": "nest",
+    "png": "img",
+    "jpeg": "img",
+    "jpg": "img",
+    "webp": "img",
+    "svg": "svg",
+    "ico": "svg",
+    "mp4": "vid",
+    "avi": "vid",
+    "webm": "vid",
+    "mp3": "mp3"
   },
   "fileNames": {
     "Dockerfile": "docker",
@@ -173,8 +188,8 @@
   },
   "folderNames": {
     "src": "src",
-    "dist": "_folder",
-    "build": "_folder",
+    "dist": "bin",
+    "build": "bin",
     "node_modules": "_folder",
     ".git": "git_folder",
     ".vscode": "vscode",
@@ -187,8 +202,8 @@
   },
   "folderNamesExpanded": {
     "src": "src_open",
-    "dist": "_folder_open",
-    "build": "_folder_open",
+    "dist": "bin_open",
+    "build": "bin_open",
     "node_modules": "_folder_open",
     ".git": "git_folder_open",
     ".vscode": "vscode_open",
