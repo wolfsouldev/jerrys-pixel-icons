@@ -8,7 +8,6 @@
     "type": "git",
     "url": "https://github.com/wolfsouldev/jerrys-pixel-icons.git"
   },
-  "icon": "./logo.png",
   "engines": {
     "vscode": "^1.105.0"
   },
@@ -25,7 +24,6 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
