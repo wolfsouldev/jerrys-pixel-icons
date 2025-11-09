@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/wolfsouldev/jerrys-pixel-icons.git"
   },
-  "icon": "./logo.png",
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.105.0"
   },
