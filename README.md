@@ -2,7 +2,7 @@
 
 ![Preview](./github_image.webp)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-0.0.4-blue.svg)
 ![VSCode](https://img.shields.io/badge/VSCode-%3E%3D1.60.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
