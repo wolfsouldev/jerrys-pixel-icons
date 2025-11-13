@@ -73,9 +73,19 @@
     "public":{"iconPath": "../icons/folders/public.png"},
     "public_open":{"iconPath": "../icons/folders/public-open.png"},
     "bin":{"iconPath": "../icons/folders/bin.png"},
-    "bin_open":{"iconPath": "../icons/folders/bin-open.png"}
-    
-
+    "bin_open":{"iconPath": "../icons/folders/bin-open.png"},
+    "i18n":{"iconPath": "../icons/folders/i18n.png"},
+    "i18n_open":{"iconPath": "../icons/folders/i18n-open.png"},
+    "layouts": {"iconPath": "../icons/folders/layouts.png"},
+    "layouts_open": {"iconPath": "../icons/folders/layouts-open.png"},
+    "pages": {"iconPath": "../icons/folders/pages.png"},
+    "pages_open": {"iconPath": "../icons/folders/pages-open.png"},
+    "styles": {"iconPath": "../icons/folders/styles.png"},
+    "styles_open": {"iconPath": "../icons/folders/styles-open.png"},
+    "icons": {"iconPath": "../icons/folders/icons.png"},
+    "icons_open": {"iconPath": "../icons/folders/icons-open.png"},
+    "themes": {"iconPath": "../icons/folders/themes.png"},
+    "themes_open": {"iconPath": "../icons/folders/themes-open.png"},
   },
   "file": "_file",
   "folder": "_folder",
@@ -201,7 +211,12 @@
     "static": "_folder",
     "components": "components",
     "controllers": "controller",
-    "bin":"bin"
+    "bin":"bin",
+    "i18n":"i18n",
+    "layouts":"layouts",
+    "pages":"pages",
+    "styles":"styles"
+
   },
   "folderNamesExpanded": {
     "src": "src_open",
@@ -215,6 +230,10 @@
     "static": "_folder_open",
     "components": "components_open",
     "controllers": "controller_open",
-    "bin":"bin_open"
+    "bin":"bin_open",
+    "i18n":"i18n_open",
+    "layouts":"layouts_open",
+    "pages":"pages_open",
+    "styles":"styles_open"
   }
 }
