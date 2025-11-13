@@ -33,6 +33,7 @@
     "docker": { "iconPath": "../icons/files/docker.png" },
     "git": { "iconPath": "../icons/files/git.png" },
     "npm": { "iconPath": "../icons/files/npm.png" },
+    "pnpm": { "iconPath": "../icons/files/pnpm.png" },
     "node": { "iconPath": "../icons/files/node.png" },
     "env": { "iconPath": "../icons/files/env.png" },
     "txt": { "iconPath": "../icons/files/txt.png" },
@@ -51,6 +52,10 @@
     "tailwind": { "iconPath": "../icons/files/tailwind.png" },
     "bun": { "iconPath": "../icons/files/bun.png" },
     "gql": { "iconPath": "../icons/files/gql.png" },
+    "img" : {"iconPath": "../icons/files/png.png"},
+    "svg" :{"iconPath": "../icons/files/svg.png"},
+    "vid" :{"iconPath": "../icons/files/mp4.png"},
+    "aud" :{"iconPath": "../icons/files/mp3.png"},
     
     // Folder Icons
     "assets":{"iconPath": "../icons/folders/assets.png"},
@@ -68,11 +73,8 @@
     "public":{"iconPath": "../icons/folders/public.png"},
     "public_open":{"iconPath": "../icons/folders/public-open.png"},
     "bin":{"iconPath": "../icons/folders/bin.png"},
-    "bin_open":{"iconPath": "../icons/folders/bin-open.png"},
-    "img" : {"iconPath": "../icons/files/png.png"},
-    "svg" :{"iconPath": "../icons/files/svg.png"},
-    "vid" :{"iconPath": "../icons/files/mp4.png"},
-    "aud" :{"iconPath": "../icons/files/mp3.png"}
+    "bin_open":{"iconPath": "../icons/folders/bin-open.png"}
+    
 
   },
   "file": "_file",
@@ -161,7 +163,7 @@
     "package.json": "npm",
     "package-lock.json": "npm",
     "yarn.lock": "npm",
-    "pnpm-lock.yaml": "npm",
+    "pnpm-lock.yaml": "pnpm",
     "bun.lockb": "bun",
     ".env": "env",
     ".env.local": "env",
