@@ -64,6 +64,7 @@
     "prettier":{"iconPath": "../icons/files/prettier.png"},
     "favicon":{"iconPath": "../icons/files/favicon.png"},
     "robot":{"iconPath": "../icons/files/robot.png"},
+    "vscode":{"iconPath":"../icons/files/vscode.png"},
     
     // Folder Icons
     "assets":{"iconPath": "../icons/folders/assets.png"},
@@ -76,7 +77,7 @@
     "git_folder_open":{"iconPath": "../icons/folders/git-open.png"},
     "src":{"iconPath": "../icons/folders/src.png"},
     "src_open":{"iconPath": "../icons/folders/src-open.png"},
-    "vscode":{"iconPath": "../icons/folders/vscode.png"},
+    "vscode_file":{"iconPath": "../icons/folders/vscode.png"},
     "vscode_open":{"iconPath": "../icons/folders/vscode-open.png"},
     "public":{"iconPath": "../icons/folders/public.png"},
     "public_open":{"iconPath": "../icons/folders/public-open.png"},
@@ -232,9 +233,11 @@
     ".prettierrc":"prettier",
     ".prettierignore":"prettier",
     "eslint.config.js":"eslint",
+    "eslint.config.mjs":"eslint",
     "favicon.ico":"favicon",
     "robots.txt":"robot",
-    "astro.config.js":"astro"
+    "astro.config.js":"astro",
+    "*.vscode*":"vscode"
   },
   "folderNames": {
     "src": "src",
@@ -242,7 +245,7 @@
     "build": "bin",
     "node_modules": "node_modules",
     ".git": "git_folder",
-    ".vscode": "vscode",
+    ".vscode": "vscode_file",
     "assets": "assets",
     "public": "public",
     "static": "_folder",
@@ -253,8 +256,10 @@
     "release":"bin",
     "i18n":"i18n",
     "layouts":"layouts",
+    "layout":"layouts",
     "pages":"pages",
     "styles":"styles",
+    "style":"styles",
     "icons":"icons",
     "themes":"themes",
     "debug":"debug",
@@ -262,7 +267,9 @@
     "properties":"properties",
     "services":"services",
     "utils":"utils",
-    "content":"content"
+    "content":"content",
+    "contents":"content"
+
 
   },
   "folderNamesExpanded": {
