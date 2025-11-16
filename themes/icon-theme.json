@@ -237,6 +237,7 @@
     "favicon.ico":"favicon",
     "robots.txt":"robot",
     "astro.config.js":"astro",
+    "astro.config.mjs":"astro",
     "*.vscode*":"vscode"
   },
   "folderNames": {
