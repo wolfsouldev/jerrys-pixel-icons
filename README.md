@@ -117,11 +117,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[version-shield]: https://img.shields.io/badge/version-0.1.0-blue.svg?style=flat-square
+[version-shield]: https://img.shields.io/badge/version-0.1.1-blue.svg?style=flat-square
 [contributors-shield]: https://img.shields.io/github/contributors/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
 [contributors-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/graphs/contributors
 [stars-shield]: https://img.shields.io/github/stars/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
 [stars-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/stargazers
 [license-shield]: https://img.shields.io/github/license/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
 [license-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/blob/master/LICENSE
-[examples]: assets/example.webp
+[examples]: ./assets/example.webp
