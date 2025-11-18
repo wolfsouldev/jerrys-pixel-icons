@@ -66,6 +66,7 @@
     "robot":{"iconPath": "../icons/files/robot.png"},
     "vscode":{"iconPath":"../icons/files/vscode.png"},
     "router":{"iconPath": "../icons/files/route.png"},
+    "zig": { "iconPath": "../icons/files/zig.png" },
     
     // Folder Icons
     "assets":{"iconPath": "../icons/folders/assets.png"},
@@ -216,7 +217,9 @@
     "*Router.*":"route",
     "*routing.*":"route",
     "*urls.*":"route",
-    "*navigation.*":"route"
+    "*navigation.*":"route",
+    "zig": "zig",
+    "zon": "zig"
   },
   "fileNames": {
     "Dockerfile": "docker",
