@@ -270,7 +270,9 @@
     "robots.txt":"robot",
     "astro.config.js":"astro",
     "astro.config.mjs":"astro",
-    "*.vscode*":"vscode",
+    ".vscodeignore":"vscode",
+    ".vscode-test.mjs":"vscode",
+    ".vscode-test.js":"vscode",
   },
   "folderNames": {
     "src": "src",

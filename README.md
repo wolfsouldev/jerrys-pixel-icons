@@ -124,4 +124,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [stars-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/stargazers
 [license-shield]: https://img.shields.io/github/license/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
 [license-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/blob/master/LICENSE
-[examples]: ./assets/example.webp
+[examples]: https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/example.webp
