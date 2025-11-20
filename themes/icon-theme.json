@@ -70,6 +70,8 @@
     "router":{"iconPath": "../icons/files/route.png"},
     "zig": { "iconPath": "../icons/files/zig.png" },
     "vsix": { "iconPath": "../icons/files/vsix.png" },
+    "vsix": { "iconPath": "../icons/files/vsix.png" },
+    "vs": { "iconPath": "../icons/files/vs.png" },
     
     // Folder Icons
     "assets":{"iconPath": "../icons/folders/assets.svg"},
@@ -223,7 +225,9 @@
     "*navigation.*":"route",
     "zig": "zig",
     "zon": "zig",
-    "vsix":"vsix"
+    "vsix":"vsix",
+    "csproj":"vs",
+    "http":"http"
   },
   "fileNames": {
     "Dockerfile": "docker",
