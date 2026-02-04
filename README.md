@@ -96,7 +96,7 @@ Any contributions you make are **greatly appreciated**.
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-★ If you want to contribute an icon, just make sure it's a 16x16 PNG.
+★ If you want to contribute an icon, just make sure it's a 16x16 PNG or SVG!
 
 <!-- LICENSE -->
 ## License
@@ -117,7 +117,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[version-shield]: https://img.shields.io/badge/version-0.2.0-blue.svg?style=flat-square
+[version-shield]: https://img.shields.io/badge/version-0.3.0-blue.svg?style=flat-square
 [contributors-shield]: https://img.shields.io/github/contributors/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
 [contributors-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/graphs/contributors
 [stars-shield]: https://img.shields.io/github/stars/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
