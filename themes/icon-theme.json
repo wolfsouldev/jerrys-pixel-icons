@@ -80,6 +80,7 @@
     "pptx":{"iconPath": "../icons/files/pptx.svg"},
     "ini":{"iconPath": "../icons/files/ini.svg"},
     "razor": {"iconPath": "../icons/files/razor.svg"},
+    "ase":{"iconPath": "../icons/files/ase.svg"},
     
     // Folder Icons
     "assets":{"iconPath": "../icons/folders/assets.svg"},
@@ -255,6 +256,8 @@
     "webp": "img",
     "svg": "svg",
     "ico": "svg",
+    "ase":"ase",
+    "aseprite":"ase",
     "mp4": "vid",
     "avi": "vid",
     "webm": "vid",
