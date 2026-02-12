@@ -344,7 +344,9 @@
     ".vscodeignore":"vscode",
     ".vscode-test.mjs":"vscode",
     ".vscode-test.js":"vscode",
-    "tsconfig.json":"tsconfig"
+    "tsconfig.json":"tsconfig",
+    "go.mod":"go",
+    "go.sum":"go",
   },
   "folderNames": {
     "src": "src",
