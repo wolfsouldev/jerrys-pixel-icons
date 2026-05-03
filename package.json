@@ -9,9 +9,13 @@
     "url": "https://github.com/wolfsouldev/jerrys-pixel-icons.git"
   },
   "icon": "./assets/logo.png",
+  "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.105.0"
   },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "categories": [
     "Themes"
   ],
@@ -21,6 +25,85 @@
         "id": "jerrys-pixel",
         "label": "Jerry's Pixel",
         "path": "./themes/icon-theme.json"
+      }
+    ],
+    "configuration": {
+      "title": "Jerry's Pixel Icons",
+      "properties": {
+        "jerrysPixelIcons.hidesExplorerArrows": {
+          "type": "boolean",
+          "default": false,
+          "description": "Ocultar las flechas de expansión de carpetas en el explorador de archivos"
+        },
+        "jerrysPixelIcons.iconSize": {
+          "type": "string",
+          "default": "default",
+          "enum": [
+            "small",
+            "default",
+            "large"
+          ],
+          "enumDescriptions": [
+            "Iconos más pequeños con más espacio alrededor",
+            "Tamaño estándar de iconos",
+            "Iconos más grandes que ocupan más espacio"
+          ],
+          "description": "Tamaño visual de los iconos en el explorador"
+        },
+        "jerrysPixelIcons.opacity": {
+          "type": "number",
+          "default": 1.0,
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "description": "Opacidad de los iconos (0.1 a 1.0)"
+        },
+        "jerrysPixelIcons.saturation": {
+          "type": "number",
+          "default": 1.0,
+          "minimum": 0,
+          "maximum": 1.0,
+          "description": "Saturación de color de los iconos (0 = escala de grises, 1.0 = color completo)"
+        },
+        "jerrysPixelIcons.files.customAssociations": {
+          "type": "object",
+          "default": {},
+          "description": "Asociaciones personalizadas de extensiones de archivo a iconos. Claves: extensiones (ej: 'myext'), Valores: claves de icono (ej: 'js'). Usa el comando 'Show Available Icons' para ver las claves disponibles."
+        },
+        "jerrysPixelIcons.folders.customAssociations": {
+          "type": "object",
+          "default": {},
+          "description": "Asociaciones personalizadas de nombres de carpeta a iconos. Claves: nombres de carpeta, Valores: claves de icono (ej: 'api'). Usa el comando 'Show Available Icons' para ver las claves disponibles."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "jerrysPixelIcons.toggleArrows",
+        "title": "Jerry's Pixel Icons: Toggle Folder Arrows"
+      },
+      {
+        "command": "jerrysPixelIcons.changeIconSize",
+        "title": "Jerry's Pixel Icons: Change Icon Size"
+      },
+      {
+        "command": "jerrysPixelIcons.changeOpacity",
+        "title": "Jerry's Pixel Icons: Change Opacity"
+      },
+      {
+        "command": "jerrysPixelIcons.changeSaturation",
+        "title": "Jerry's Pixel Icons: Change Saturation"
+      },
+      {
+        "command": "jerrysPixelIcons.restoreDefaults",
+        "title": "Jerry's Pixel Icons: Restore Default Configuration"
+      },
+      {
+        "command": "jerrysPixelIcons.activateTheme",
+        "title": "Jerry's Pixel Icons: Activate Icon Theme"
+      },
+      {
+        "command": "jerrysPixelIcons.showAvailableIcons",
+        "title": "Jerry's Pixel Icons: Show Available Icons"
       }
     ]
   },
