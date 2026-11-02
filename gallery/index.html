@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Explora los iconos pixel art de Jerry's Pixel Icons. Busca tecnologías, extensiones y carpetas, y descubre sus asociaciones para VS Code.">
+  <title>La colección · Jerry's Pixel Icons</title>
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Saltar a la colección</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Jerry's Pixel Icons, inicio">
+      <img src="./assets/logo.png" width="38" height="38" alt="">
+      <span>jerry’s<span class="brand-sub">pixel icons</span></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link" href="#collection">La colección</a>
+      <a class="nav-link request-link" href="https://github.com/wolfsouldev/jerrys-pixel-icons/issues/new?template=icon-request.yml" target="_blank" rel="noopener noreferrer">Pedir un icono ↗</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar a modo oscuro"><span aria-hidden="true">◐</span> <span id="theme-label">Oscuro</span></button>
+      <a class="github-link" href="https://github.com/wolfsouldev/jerrys-pixel-icons" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-pixel" aria-hidden="true"></span> PEQUEÑOS DETALLES, GRAN PERSONALIDAD</p>
+        <h1 id="hero-title">Tu código.<br>Un poco más <span class="pixel-word">pixel.</span></h1>
+        <p class="hero-description">Un pequeño universo de iconos pixel art para archivos y carpetas. Hechos para darle carácter a tu explorador de VS Code.</p>
+        <div class="hero-actions"><a class="install-link" href="https://marketplace.visualstudio.com/items?itemName=MelissaGutierrez.jerrys-pixel-icons" target="_blank" rel="noopener noreferrer">Llévalos a tu editor <span aria-hidden="true">↗</span></a><a class="explore-link" href="#collection">Explorar iconos ↓</a></div>
+        <p class="hero-footnote"><span id="version">Jerry’s Pixel Icons</span><span class="dot">·</span>Gratis y de código abierto</p>
+      </div>
+      <div class="hero-preview" aria-label="Una muestra de los iconos de la colección">
+        <div class="preview-title"><span class="window-dots" aria-hidden="true">▪ ▪ ▪</span><span>UN EXPLORADOR CON CARÁCTER</span><span aria-hidden="true">↗</span></div>
+        <div id="hero-icons" class="hero-icons"></div>
+        <div class="preview-footer"><span><span class="mini-pixel" aria-hidden="true"></span> ARTESANÍA DIGITAL</span><span id="asset-count">PIXEL A PIXEL</span></div>
+      </div>
+    </section>
+
+    <section id="collection" class="collection wrap" aria-labelledby="collection-title">
+      <div class="collection-heading"><div><p class="eyebrow">ENCUENTRA TU PRÓXIMO FAVORITO</p><h2 id="collection-title">La colección<span class="heading-dot">.</span></h2></div><p id="collection-total" class="collection-total">Desde un único catálogo.<br>Sin perder un solo píxel.</p></div>
+      <form id="controls" class="controls" role="search" aria-label="Buscar iconos">
+        <fieldset id="search-fields" disabled>
+          <legend class="sr-only">Búsqueda y filtros de la colección</legend>
+          <div class="search-box"><span class="search-glyph" aria-hidden="true"></span><label class="sr-only" for="search">Buscar por tecnología, extensión o carpeta</label><input id="search" type="search" placeholder="Busca JavaScript, .py, components…" autocomplete="off" maxlength="200" spellcheck="false"><button id="clear-search" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button><kbd class="shortcut" aria-hidden="true">/</kbd></div>
+          <div class="filter-row">
+            <div class="type-filters" role="group" aria-label="Tipo de icono"><button class="filter active" type="button" data-type="all" aria-pressed="true">Todos <span id="count-all">—</span></button><button class="filter" type="button" data-type="file" aria-pressed="false">Archivos <span id="count-file">—</span></button><button class="filter" type="button" data-type="folder" aria-pressed="false">Carpetas <span id="count-folder">—</span></button></div>
+            <div class="view-controls"><label class="folder-toggle"><input id="open-folders" type="checkbox"><span class="switch" aria-hidden="true"></span>Carpetas abiertas</label><label class="sr-only" for="sort">Ordenar iconos</label><select id="sort"><option value="name">Nombre A–Z</option><option value="associations">Más asociaciones</option></select></div>
+          </div>
+        </fieldset>
+      </form>
+      <div class="results-heading"><p id="results-count" role="status" aria-live="polite">Cargando la colección…</p><span class="detail-hint">CADA ICONO TIENE UNA HISTORIA. HAZ CLIC.</span></div>
+      <div id="load-error" class="empty-state" hidden><span class="empty-symbol" aria-hidden="true">!</span><h3>No pudimos cargar la colección</h3><p>Comprueba la conexión o vuelve a abrir la galería desde su servidor local.</p><button id="retry" class="text-button" type="button">Volver a intentar ↻</button></div>
+      <div id="icon-grid" class="icon-grid" aria-label="Iconos de la colección"></div>
+      <div id="empty-state" class="empty-state" hidden><span class="empty-symbol" aria-hidden="true">⌕</span><h3>Ningún píxel por aquí.</h3><p>Prueba otra tecnología, una extensión o el nombre de una carpeta.</p><button id="reset-filters" class="text-button" type="button">Limpiar búsqueda y filtros ↗</button></div>
+      <noscript><p class="empty-state">Activa JavaScript para buscar en la colección. El enlace de instalación funciona sin él.</p></noscript>
+      <div class="collection-end"><span aria-hidden="true">■</span><p>¿Falta uno que usas todos los días?</p><a href="https://github.com/wolfsouldev/jerrys-pixel-icons/issues/new?template=icon-request.yml" target="_blank" rel="noopener noreferrer">Dinos cuál ↗</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap"><div class="footer-brand"><img src="./assets/logo.png" width="24" height="24" alt="">Hecho de píxeles. Lleno de carácter.</div><a href="./LICENSE.txt">Licencia MIT</a><span>Jerry’s Pixel Icons <span id="footer-version"></span></span></footer>
+
+  <template id="icon-card-template"><button class="icon-card" type="button"><span class="card-kind"></span><span class="card-image"><img width="48" height="48" alt="" loading="lazy"></span><span class="card-label"></span><span class="card-associations"></span><span class="card-arrow" aria-hidden="true">↗</span></button></template>
+
+  <dialog id="icon-dialog" aria-labelledby="icon-title"><div class="dialog-shell"><button id="close-dialog" class="close-dialog" type="button" aria-label="Cerrar detalle" autofocus>×</button><div class="dialog-preview"><img id="detail-image" width="96" height="96" alt=""><div id="folder-states" class="folder-states" role="group" aria-label="Estado de la carpeta" hidden><button type="button" data-open="false">Cerrada</button><button type="button" data-open="true">Abierta</button></div></div><div class="dialog-content"><p id="detail-type" class="eyebrow"></p><h2 id="icon-title"></h2><p class="detail-id">ID <code id="detail-id"></code></p><p id="default-note" class="default-note" hidden>Icono predeterminado: se utiliza cuando no hay una asociación más específica.</p><div class="detail-group"><h3>Extensiones</h3><div id="detail-extensions" class="chips"></div></div><div class="detail-group"><h3>Nombres exactos</h3><div id="detail-names" class="chips"></div></div><div class="detail-actions"><a id="download-icon" class="download-link" download>Descargar SVG ↘</a><button id="copy-id" class="copy-button" type="button">Copiar ID</button></div><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div></div></dialog>
+</body>
+</html>

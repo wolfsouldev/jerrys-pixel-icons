@@ -26,6 +26,8 @@
         "properties": {
           "id": { "$ref": "#/$defs/id" },
           "icon": { "$ref": "#/$defs/icon" },
+          "label": { "type": "string", "pattern": "\\S" },
+          "tags": { "$ref": "#/$defs/tags" },
           "extensions": { "$ref": "#/$defs/aliases" },
           "names": { "$ref": "#/$defs/aliases" }
         }
@@ -42,12 +44,18 @@
           "id": { "$ref": "#/$defs/id" },
           "icon": { "$ref": "#/$defs/icon" },
           "expandedId": { "$ref": "#/$defs/id" },
+          "label": { "type": "string", "pattern": "\\S" },
+          "tags": { "$ref": "#/$defs/tags" },
           "names": { "$ref": "#/$defs/aliases" }
         }
       }
     }
   },
   "$defs": {
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "\\S" }
+    },
     "id": { "type": "string", "pattern": "^[a-zA-Z0-9_-]+$" },
     "icon": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
     "aliases": {

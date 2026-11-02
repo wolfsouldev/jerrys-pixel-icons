@@ -29,14 +29,18 @@
     "generate": "node scripts/generate-theme.mjs",
     "generate:check": "node scripts/generate-theme.mjs --check",
     "validate": "pnpm run generate:check && node scripts/validate-theme.mjs",
-    "lint": "eslint scripts",
+    "lint": "eslint scripts gallery",
     "pretest": "pnpm run lint && pnpm run validate",
     "test": "node --test scripts/*.test.mjs",
     "vscode:prepublish": "pnpm test",
     "package": "vsce package --no-dependencies && pnpm run package:check",
-    "package:check": "node scripts/check-package.mjs"
+    "package:check": "node scripts/check-package.mjs",
+    "gallery:build": "node scripts/build-gallery.mjs",
+    "gallery:preview": "pnpm run gallery:build && node scripts/serve-gallery.mjs",
+    "test:gallery": "playwright test --config gallery/playwright.config.mjs"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
     "@types/vscode": "^1.105.0",

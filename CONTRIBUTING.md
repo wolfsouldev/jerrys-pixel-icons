@@ -33,6 +33,10 @@ El catálogo contiene:
 | `files` | Definiciones de archivos y sus extensiones/nombres exactos. |
 | `folders` | Definiciones de carpetas con un único listado de nombres para ambos estados. |
 
+Cada entrada admite `label` (nombre legible) y `tags` (palabras clave) opcionales
+para la galería. Mantén esa información en el mismo catálogo: no modifiques las
+asociaciones para conseguir que un término aparezca en el buscador.
+
 ### Añadir o asociar un icono de archivo
 
 1. Busca primero si existe un icono adecuado en `files`.
@@ -170,6 +174,10 @@ claros y oscuros y evita que toda la silueta desaparezca en uno de ellos.
 
 Las comprobaciones automáticas validan datos y archivos; **no prueban que el icono
 se vea bien dentro del editor**.
+
+Si cambias la galería, consulta [su guía](gallery/README.md), ejecuta
+`pnpm run gallery:build` y `pnpm run test:gallery` (requiere el Chromium de Playwright)
+y comprueba escritorio y móvil. La galería se empaqueta por separado del VSIX.
 
 ## 5. Qué comprueba GitHub Actions
 

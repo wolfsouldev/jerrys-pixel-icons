@@ -45,7 +45,10 @@ jobs:
       - name: Check generated output, lint and run regression tests
         run: pnpm test
 
-      - name: Build VSIX and verify its actual contents
+      - name: Build the standalone static gallery
+        run: pnpm run gallery:build
+
+      - name: Build VSIX and verify the gallery stays outside its contents
         run: pnpm run package
 
       - name: Ensure checks did not rewrite generated files or the lockfile
@@ -57,4 +60,47 @@ jobs:
           name: jerrys-pixel-icons-node-${{ matrix.node }}
           path: '*.vsix'
           if-no-files-found: error
+          retention-days: 7
+
+      - name: Keep standalone gallery for manual inspection
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: icon-gallery-node-${{ matrix.node }}
+          path: dist/gallery/
+          if-no-files-found: error
+          retention-days: 7
+
+  gallery-browser:
+    name: Gallery browser checks
+    needs: validate-and-package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+        with:
+          run_install: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Exercise desktop and mobile gallery
+        run: pnpm run test:gallery
+      - name: Keep browser screenshots and failure traces
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: icon-gallery-browser-results
+          path: dist/gallery-test-results/
+          if-no-files-found: warn
           retention-days: 7

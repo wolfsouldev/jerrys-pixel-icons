@@ -80,6 +80,8 @@ for (const [name, modify, message] of [
     ['null asset names', c => c.files[0].icon = null, /asset basename/],
     ['null expanded IDs', c => c.folders[0].expandedId = null, /icon identifier/],
     ['invalid schema locations', c => c.$schema = {}, /schema must be a string/],
+    ['empty presentation labels', c => c.files[0].label = '  ', /label must be a nonempty string/],
+    ['invalid presentation tags', c => c.folders[0].tags = [null], /tags must be an array/],
     ['unknown fields', c => c.files[0].extensons = ['py'], /unknown field/],
     ['unknown versions', c => c.version = 2, /version must be 1/],
     ['wrong file default', c => c.defaults.file = 'folder', /defaults.file/],
@@ -98,6 +100,15 @@ test('literal bracket aliases are preserved', () => {
     const catalog = minimalCatalog();
     catalog.folders[0].names.push('[slug]');
     assert.equal(buildTheme(catalog).folderNamesExpanded['[slug]'], 'folder_open');
+});
+
+test('gallery labels and tags do not change generated theme associations', () => {
+    const catalog = minimalCatalog();
+    const before = serializeTheme(buildTheme(catalog));
+    catalog.files[0].label = 'JavaScript';
+    catalog.files[0].tags = ['frontend', 'código'];
+    catalog.folders[0].label = 'Fuentes';
+    assert.equal(serializeTheme(buildTheme(catalog)), before);
 });
 
 test('generate creates valid output and is idempotent', t => {

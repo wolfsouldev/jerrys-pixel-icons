@@ -16,6 +16,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Added
 
+- A same-repository static icon gallery, generated from the canonical catalog,
+  with search, type filters, sorting, open-folder previews, light/dark appearance,
+  association details, original SVG downloads and URL-persisted search state.
+- Optional catalog presentation labels and search tags without changing theme output.
+- Standalone gallery build/local-preview commands and desktop/mobile browser tests.
+- Gallery build artifacts and Chromium browser checks in CI, without deployment.
+
 - Static theme validation and regression tests for associations, SVG XML, and folder states.
 - Automatic linting, validation, and tests before packaging.
 - A single source catalog and editor schema, with deterministic theme generation

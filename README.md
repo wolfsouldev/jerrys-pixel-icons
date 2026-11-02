@@ -42,6 +42,7 @@ logo path: assets/logo.png
   - [Activating The Extension](#activating-the-extension)
 - [Reporting Issues](#reporting-issues)
 - [Contributing](#contributing)
+- [Icon Gallery](#icon-gallery)
 - [License](#license)
 - [Contact](#contact)
 
@@ -134,6 +135,20 @@ Press `F5` to validate the theme and open an Extension Development Host. Select
 closed and expanded folders. Automated checks do not replace this rendering check.
 
 <!-- LICENSE -->
+## Icon Gallery
+
+Explore the collection locally, with search, file/folder filters, open-folder
+previews, light/dark backgrounds, association details and original SVG downloads:
+
+```sh
+pnpm run gallery:preview
+```
+
+Open **http://127.0.0.1:4173**. The gallery reads the same source catalog as the theme.
+`pnpm run gallery:build` creates a self-contained static site in `dist/gallery/`;
+it is excluded from the VSIX and does not deploy automatically.
+See the [gallery guide](gallery/README.md) for browser tests and build details.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.

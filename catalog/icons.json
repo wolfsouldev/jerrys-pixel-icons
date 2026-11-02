@@ -8,7 +8,8 @@
   "files": [
     {
       "id": "_file",
-      "icon": "txt"
+      "icon": "txt",
+      "label": "Archivo genérico"
     },
     {
       "id": "astro",
@@ -18,7 +19,8 @@
       "names": [
         "astro.config.js",
         "astro.config.mjs"
-      ]
+      ],
+      "label": "Astro"
     },
     {
       "id": "js",
@@ -26,7 +28,8 @@
         "js",
         "mjs",
         "cjs"
-      ]
+      ],
+      "label": "JavaScript"
     },
     {
       "id": "ts",
@@ -34,53 +37,61 @@
         "ts",
         "mts",
         "cts"
-      ]
+      ],
+      "label": "TypeScript"
     },
     {
       "id": "tsconfig",
       "names": [
         "tsconfig.json"
-      ]
+      ],
+      "label": "TypeScript Config"
     },
     {
       "id": "html",
       "extensions": [
         "html",
         "htm"
-      ]
+      ],
+      "label": "HTML"
     },
     {
       "id": "css",
       "extensions": [
         "css"
-      ]
+      ],
+      "label": "CSS"
     },
     {
       "id": "sass",
       "extensions": [
         "scss",
         "sass"
-      ]
+      ],
+      "label": "Sass"
     },
     {
       "id": "less",
       "extensions": [
         "less"
-      ]
+      ],
+      "label": "Less"
     },
     {
       "id": "json",
       "extensions": [
         "json",
         "jsonc"
-      ]
+      ],
+      "label": "JSON"
     },
     {
       "id": "md",
       "extensions": [
         "md",
         "markdown"
-      ]
+      ],
+      "label": "Markdown"
     },
     {
       "id": "py",
@@ -88,19 +99,22 @@
         "py",
         "pyw",
         "pyi"
-      ]
+      ],
+      "label": "Python"
     },
     {
       "id": "java",
       "extensions": [
         "java"
-      ]
+      ],
+      "label": "Java"
     },
     {
       "id": "javaclass",
       "extensions": [
         "class"
-      ]
+      ],
+      "label": "Java Class"
     },
     {
       "id": "cpp",
@@ -108,85 +122,110 @@
         "cpp",
         "cxx",
         "cc"
-      ]
+      ],
+      "label": "C++"
     },
     {
       "id": "c",
       "extensions": [
         "c"
-      ]
+      ],
+      "label": "C"
     },
     {
       "id": "cs",
       "extensions": [
         "cs"
-      ]
+      ],
+      "label": "C#"
     },
     {
       "id": "h",
       "extensions": [
         "h"
-      ]
+      ],
+      "label": "Cabecera C / C++"
     },
     {
       "id": "php",
       "extensions": [
         "php"
-      ]
+      ],
+      "label": "PHP"
     },
     {
       "id": "go",
       "extensions": [
         "go"
+      ],
+      "label": "Go",
+      "tags": [
+        "golang"
       ]
     },
     {
       "id": "rust",
       "extensions": [
         "rs"
-      ]
+      ],
+      "label": "Rust"
     },
     {
       "id": "swift",
       "extensions": [
         "swift"
-      ]
+      ],
+      "label": "Swift"
     },
     {
       "id": "kotlin",
       "extensions": [
         "kt",
         "kts"
-      ]
+      ],
+      "label": "Kotlin"
     },
     {
       "id": "dart",
       "extensions": [
         "dart"
-      ]
+      ],
+      "label": "Dart"
     },
     {
       "id": "vue",
       "extensions": [
         "vue"
-      ]
+      ],
+      "label": "Vue"
     },
     {
       "id": "svelte",
       "extensions": [
         "svelte"
-      ]
+      ],
+      "label": "Svelte"
     },
     {
       "id": "jsx",
       "extensions": [
         "jsx"
+      ],
+      "label": "React · JSX",
+      "tags": [
+        "react",
+        "javascript"
       ]
     },
     {
       "id": "tsx",
       "extensions": [
         "tsx"
+      ],
+      "label": "React · TSX",
+      "tags": [
+        "react",
+        "typescript"
       ]
     },
     {
@@ -194,26 +233,30 @@
       "extensions": [
         "xml",
         "targets"
-      ]
+      ],
+      "label": "XML"
     },
     {
       "id": "yaml",
       "extensions": [
         "yaml",
         "yml"
-      ]
+      ],
+      "label": "YAML"
     },
     {
       "id": "toml",
       "extensions": [
         "toml"
-      ]
+      ],
+      "label": "TOML"
     },
     {
       "id": "sql",
       "extensions": [
         "sql"
-      ]
+      ],
+      "label": "SQL"
     },
     {
       "id": "docker",
@@ -222,7 +265,8 @@
         "docker-compose.yml",
         "docker-compose.yaml",
         ".dockerignore"
-      ]
+      ],
+      "label": "Docker"
     },
     {
       "id": "git",
@@ -230,22 +274,26 @@
         ".gitignore",
         ".gitattributes",
         ".gitmodules"
-      ]
+      ],
+      "label": "Git"
     },
     {
       "id": "npm",
       "names": [
         ".npmrc"
-      ]
+      ],
+      "label": "npm"
     },
     {
       "id": "pnpm",
       "names": [
         "pnpm-lock.yaml"
-      ]
+      ],
+      "label": "pnpm"
     },
     {
-      "id": "node"
+      "id": "node",
+      "label": "Node.js · alternativo"
     },
     {
       "id": "env",
@@ -255,13 +303,18 @@
         ".env.development",
         ".env.production",
         ".env.test"
+      ],
+      "label": "Variables de entorno",
+      "tags": [
+        "configuración"
       ]
     },
     {
       "id": "txt",
       "extensions": [
         "txt"
-      ]
+      ],
+      "label": "Texto"
     },
     {
       "id": "license",
@@ -269,7 +322,8 @@
         "LICENSE",
         "LICENSE.md",
         "LICENSE.txt"
-      ]
+      ],
+      "label": "Licencia"
     },
     {
       "id": "readme",
@@ -280,14 +334,16 @@
         "README.md",
         "README",
         "README.txt"
-      ]
+      ],
+      "label": "README"
     },
     {
       "id": "powershell",
       "extensions": [
         "ps1",
         "psm1"
-      ]
+      ],
+      "label": "PowerShell"
     },
     {
       "id": "shell",
@@ -296,6 +352,11 @@
         "bash",
         "zsh",
         "fish"
+      ],
+      "label": "Shell",
+      "tags": [
+        "terminal",
+        "bash"
       ]
     },
     {
@@ -303,26 +364,30 @@
       "extensions": [
         "bat",
         "cmd"
-      ]
+      ],
+      "label": "Batch"
     },
     {
       "id": "lua",
       "extensions": [
         "lua"
-      ]
+      ],
+      "label": "Lua"
     },
     {
       "id": "r",
       "extensions": [
         "r"
-      ]
+      ],
+      "label": "R"
     },
     {
       "id": "scala",
       "extensions": [
         "scala",
         "sc"
-      ]
+      ],
+      "label": "Scala"
     },
     {
       "id": "prisma",
@@ -331,7 +396,8 @@
       ],
       "names": [
         "schema.prisma"
-      ]
+      ],
+      "label": "Prisma"
     },
     {
       "id": "vite",
@@ -339,7 +405,8 @@
         "vite.config.js",
         "vite.config.ts",
         "vite.config.mjs"
-      ]
+      ],
+      "label": "Vite"
     },
     {
       "id": "next",
@@ -347,34 +414,42 @@
         "next.config.js",
         "next.config.ts",
         "next.config.mjs"
-      ]
+      ],
+      "label": "Next.js"
     },
     {
       "id": "nest",
       "extensions": [
         "module.ts",
         "module.js"
-      ]
+      ],
+      "label": "NestJS"
     },
     {
       "id": "tailwind",
       "names": [
         "tailwind.config.js",
         "tailwind.config.ts"
-      ]
+      ],
+      "label": "Tailwind CSS"
     },
     {
       "id": "bun",
       "names": [
         "bun.lockb",
         "bun.lock"
-      ]
+      ],
+      "label": "Bun"
     },
     {
       "id": "gql",
       "extensions": [
         "graphql",
         "gql"
+      ],
+      "label": "GraphQL",
+      "tags": [
+        "graphql"
       ]
     },
     {
@@ -385,6 +460,11 @@
         "jpeg",
         "jpg",
         "webp"
+      ],
+      "label": "Imágenes",
+      "tags": [
+        "imagen",
+        "images"
       ]
     },
     {
@@ -392,7 +472,8 @@
       "extensions": [
         "svg",
         "ico"
-      ]
+      ],
+      "label": "SVG"
     },
     {
       "id": "vid",
@@ -401,6 +482,10 @@
         "mp4",
         "avi",
         "webm"
+      ],
+      "label": "Vídeo",
+      "tags": [
+        "video"
       ]
     },
     {
@@ -408,13 +493,19 @@
       "icon": "mp3",
       "extensions": [
         "mp3"
+      ],
+      "label": "Audio",
+      "tags": [
+        "música",
+        "sound"
       ]
     },
     {
       "id": "yarn",
       "names": [
         "yarn.lock"
-      ]
+      ],
+      "label": "Yarn"
     },
     {
       "id": "changelog",
@@ -422,28 +513,32 @@
         "CHANGELOG.txt",
         "changelog",
         "CHANGELOG.md"
-      ]
+      ],
+      "label": "Changelog"
     },
     {
       "id": "eslint",
       "names": [
         "eslint.config.js",
         "eslint.config.mjs"
-      ]
+      ],
+      "label": "ESLint"
     },
     {
       "id": "node2",
       "names": [
         "package.json",
         "package-lock.json"
-      ]
+      ],
+      "label": "Node.js · paquetes"
     },
     {
       "id": "prettier",
       "names": [
         ".prettierrc",
         ".prettierignore"
-      ]
+      ],
+      "label": "Prettier"
     },
     {
       "id": "favicon",
@@ -451,13 +546,15 @@
         "favicon.ico",
         "favicon.png",
         "favicon.svg"
-      ]
+      ],
+      "label": "Favicon"
     },
     {
       "id": "robot",
       "names": [
         "robots.txt"
-      ]
+      ],
+      "label": "Robots"
     },
     {
       "id": "vscode",
@@ -465,7 +562,8 @@
         ".vscodeignore",
         ".vscode-test.mjs",
         ".vscode-test.js"
-      ]
+      ],
+      "label": "VS Code"
     },
     {
       "id": "router",
@@ -495,6 +593,11 @@
         "urls.py",
         "navigation.ts",
         "navigation.js"
+      ],
+      "label": "Rutas",
+      "tags": [
+        "routing",
+        "navigation"
       ]
     },
     {
@@ -502,115 +605,136 @@
       "extensions": [
         "zig",
         "zon"
-      ]
+      ],
+      "label": "Zig"
     },
     {
       "id": "vsix",
       "extensions": [
         "vsix"
-      ]
+      ],
+      "label": "Extensión VS Code"
     },
     {
       "id": "http",
       "extensions": [
         "http"
-      ]
+      ],
+      "label": "HTTP"
     },
     {
       "id": "vs",
       "extensions": [
         "csproj",
         "sln"
-      ]
+      ],
+      "label": "Visual Studio"
     },
     {
       "id": "conf",
       "extensions": [
         "conf",
         "props"
-      ]
+      ],
+      "label": "Configuración"
     },
     {
       "id": "docx",
       "extensions": [
         "docx"
-      ]
+      ],
+      "label": "Word"
     },
     {
       "id": "xlsx",
       "extensions": [
         "xlsx"
-      ]
+      ],
+      "label": "Excel"
     },
     {
       "id": "ruby",
       "extensions": [
         "rb"
-      ]
+      ],
+      "label": "Ruby"
     },
     {
       "id": "pptx",
       "extensions": [
         "pptx"
-      ]
+      ],
+      "label": "PowerPoint"
     },
     {
       "id": "ini",
       "extensions": [
         "ini"
-      ]
+      ],
+      "label": "INI"
     },
     {
       "id": "razor",
       "extensions": [
         "razor",
         "cshtml"
-      ]
+      ],
+      "label": "Razor"
     },
     {
       "id": "ase",
       "extensions": [
         "ase",
         "aseprite"
+      ],
+      "label": "Aseprite",
+      "tags": [
+        "pixel art"
       ]
     }
   ],
   "folders": [
     {
       "id": "_folder",
-      "icon": "folder"
+      "icon": "folder",
+      "label": "Carpeta genérica"
     },
     {
       "id": "assets",
       "names": [
         "assets",
         "static"
-      ]
+      ],
+      "label": "Recursos"
     },
     {
       "id": "components",
       "names": [
         "components"
-      ]
+      ],
+      "label": "Componentes"
     },
     {
       "id": "controller",
       "names": [
         "controllers"
-      ]
+      ],
+      "label": "Controladores"
     },
     {
       "id": "git_folder",
       "icon": "git",
       "names": [
         ".git"
-      ]
+      ],
+      "label": "Git"
     },
     {
       "id": "src",
       "names": [
         "src"
-      ]
+      ],
+      "label": "Código fuente"
     },
     {
       "id": "vscode_file",
@@ -618,13 +742,15 @@
       "expandedId": "vscode_open",
       "names": [
         ".vscode"
-      ]
+      ],
+      "label": "VS Code"
     },
     {
       "id": "public",
       "names": [
         "public"
-      ]
+      ],
+      "label": "Público"
     },
     {
       "id": "bin",
@@ -634,102 +760,118 @@
         "bin",
         "obj",
         "release"
-      ]
+      ],
+      "label": "Compilación"
     },
     {
       "id": "i18n",
       "names": [
         "i18n"
-      ]
+      ],
+      "label": "Traducciones"
     },
     {
       "id": "layouts",
       "names": [
         "layouts",
         "layout"
-      ]
+      ],
+      "label": "Layouts"
     },
     {
       "id": "pages",
       "names": [
         "pages",
         "views"
-      ]
+      ],
+      "label": "Páginas"
     },
     {
       "id": "styles",
       "names": [
         "styles",
         "style"
-      ]
+      ],
+      "label": "Estilos"
     },
     {
       "id": "icons",
       "names": [
         "icons"
-      ]
+      ],
+      "label": "Iconos"
     },
     {
       "id": "themes",
       "names": [
         "themes"
-      ]
+      ],
+      "label": "Temas"
     },
     {
       "id": "debug",
       "names": [
         "debug"
-      ]
+      ],
+      "label": "Depuración"
     },
     {
       "id": "models",
       "names": [
         "models"
-      ]
+      ],
+      "label": "Modelos"
     },
     {
       "id": "node_modules",
       "names": [
         "node_modules"
-      ]
+      ],
+      "label": "Dependencias"
     },
     {
       "id": "properties",
       "names": [
         "properties"
-      ]
+      ],
+      "label": "Propiedades"
     },
     {
       "id": "services",
       "names": [
         "services"
-      ]
+      ],
+      "label": "Servicios"
     },
     {
       "id": "utils",
       "names": [
         "utils"
-      ]
+      ],
+      "label": "Utilidades"
     },
     {
       "id": "content",
       "names": [
         "content",
         "contents"
-      ]
+      ],
+      "label": "Contenido"
     },
     {
       "id": "api",
       "names": [
         "api"
-      ]
+      ],
+      "label": "API"
     },
     {
       "id": "config_folder",
       "icon": "config",
       "names": [
         "config"
-      ]
+      ],
+      "label": "Configuración"
     },
     {
       "id": "env_folder",
@@ -737,26 +879,30 @@
       "names": [
         "env",
         ".env"
-      ]
+      ],
+      "label": "Entorno"
     },
     {
       "id": "middleware",
       "names": [
         "middleware",
         "middlewares"
-      ]
+      ],
+      "label": "Middleware"
     },
     {
       "id": "routes",
       "names": [
         "routes"
-      ]
+      ],
+      "label": "Rutas"
     },
     {
       "id": "docs",
       "names": [
         "docs"
-      ]
+      ],
+      "label": "Documentación"
     },
     {
       "id": "test",
@@ -764,72 +910,83 @@
         "tests",
         "spec",
         "cypress"
-      ]
+      ],
+      "label": "Pruebas"
     },
     {
       "id": "constants",
       "names": [
         "constant",
         "constants"
-      ]
+      ],
+      "label": "Constantes"
     },
     {
       "id": "examples",
       "names": [
         "examples",
         "example"
-      ]
+      ],
+      "label": "Ejemplos"
     },
     {
       "id": "hooks",
       "names": [
         "hooks"
-      ]
+      ],
+      "label": "Hooks"
     },
     {
       "id": "lib",
       "names": [
         "lib"
-      ]
+      ],
+      "label": "Librerías"
     },
     {
       "id": "cmd",
       "names": [
         "cmd"
-      ]
+      ],
+      "label": "Comandos"
     },
     {
       "id": "data",
       "names": [
         "data"
-      ]
+      ],
+      "label": "Datos"
     },
     {
       "id": "db",
       "names": [
         "db"
-      ]
+      ],
+      "label": "Base de datos"
     },
     {
       "id": "dto",
       "names": [
         "dtos",
         "dto"
-      ]
+      ],
+      "label": "DTO"
     },
     {
       "id": "endpoint",
       "names": [
         "endpoints",
         "endpoint"
-      ]
+      ],
+      "label": "Endpoints"
     },
     {
       "id": "entity",
       "names": [
         "entity",
         "entities"
-      ]
+      ],
+      "label": "Entidades"
     },
     {
       "id": "enum",
@@ -837,7 +994,8 @@
       "names": [
         "enum",
         "enums"
-      ]
+      ],
+      "label": "Enumeraciones"
     },
     {
       "id": "form",
@@ -845,66 +1003,76 @@
       "names": [
         "form",
         "forms"
-      ]
+      ],
+      "label": "Formularios"
     },
     {
       "id": "helper",
       "names": [
         "helper",
         "helpers"
-      ]
+      ],
+      "label": "Helpers"
     },
     {
       "id": "idea",
       "names": [
         ".idea"
-      ]
+      ],
+      "label": "IntelliJ IDEA"
     },
     {
       "id": "mapper",
       "names": [
         "mapper",
         "mappers"
-      ]
+      ],
+      "label": "Mappers"
     },
     {
       "id": "repository",
       "names": [
         "repository",
         "repositories"
-      ]
+      ],
+      "label": "Repositorios"
     },
     {
       "id": "scripts",
       "names": [
         "scripts"
-      ]
+      ],
+      "label": "Scripts"
     },
     {
       "id": "store",
       "names": [
         "store"
-      ]
+      ],
+      "label": "Estado"
     },
     {
       "id": "types",
       "names": [
         "types"
-      ]
+      ],
+      "label": "Tipos"
     },
     {
       "id": "ui",
       "names": [
         "ui",
         "uis"
-      ]
+      ],
+      "label": "Interfaz"
     },
     {
       "id": "upload",
       "names": [
         "upload",
         "uploads"
-      ]
+      ],
+      "label": "Subidas"
     },
     {
       "id": "user",
@@ -917,7 +1085,8 @@
         "admins",
         "client",
         "clients"
-      ]
+      ],
+      "label": "Usuarios"
     }
   ]
 }

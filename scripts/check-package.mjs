@@ -100,7 +100,7 @@ export function validatePackage(files, root = projectRoot) {
         }
     }
     for (const name of files.keys()) {
-        if (/^extension\/(scripts|catalog|node_modules|\.github|\.vscode)\//.test(name) ||
+        if (/^extension\/(scripts|catalog|gallery|dist|node_modules|\.github|\.vscode)\//.test(name) ||
             /^extension\/(pnpm-lock\.yaml|\.npmrc|\.gitattributes|CONTRIBUTING\.md)$/.test(name)) {
             errors.push(`Development file leaked into package: ${name}`);
         }

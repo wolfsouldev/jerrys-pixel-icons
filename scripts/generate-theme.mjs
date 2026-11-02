@@ -75,9 +75,17 @@ export function buildTheme(catalog) {
 
     for (const [group, entries] of [['files', catalog.files], ['folders', catalog.folders]]) {
         for (const entry of entries) {
-            const fields = group === 'files' ? ['id', 'icon', 'extensions', 'names'] : ['id', 'icon', 'expandedId', 'names'];
+            const fields = group === 'files' ? ['id', 'icon', 'extensions', 'names', 'label', 'tags'] :
+                ['id', 'icon', 'expandedId', 'names', 'label', 'tags'];
             requireObject(entry, fields, group);
             requireId(entry.id, `${group}.id`);
+            if (Object.hasOwn(entry, 'label') && (typeof entry.label !== 'string' || !entry.label.trim())) {
+                throw new Error(`${entry.id}.label must be a nonempty string.`);
+            }
+            if (Object.hasOwn(entry, 'tags') && (!Array.isArray(entry.tags) ||
+                entry.tags.some(tag => typeof tag !== 'string' || !tag.trim()))) {
+                throw new Error(`${entry.id}.tags must be an array of nonempty strings.`);
+            }
             const icon = Object.hasOwn(entry, 'icon') ? entry.icon : entry.id;
             // Asset basenames only: no arbitrary filesystem paths in the catalog.
             if (typeof icon !== 'string' || !/^[a-z0-9][a-z0-9_-]*$/.test(icon)) {

@@ -2,7 +2,7 @@ import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
 export default [{
-    files: ["scripts/**/*.mjs"],
+    files: ["scripts/**/*.mjs", "gallery/**/*.mjs"],
     languageOptions: {
         ecmaVersion: "latest",
         sourceType: "module",

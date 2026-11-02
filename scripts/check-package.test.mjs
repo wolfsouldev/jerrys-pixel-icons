@@ -50,6 +50,7 @@ test('package verifier rejects changed icon bytes', () => {
 });
 
 for (const path of ['catalog/icons.json', 'scripts/generate-theme.mjs', '.github/workflows/ci.yml',
+    'gallery/index.html', 'dist/gallery/data.json',
     '.vscode/tasks.json', 'node_modules/example/index.js', 'pnpm-lock.yaml', '.npmrc', 'CONTRIBUTING.md']) {
     test(`package verifier rejects leaked ${path}`, () => {
         const files = fixture();

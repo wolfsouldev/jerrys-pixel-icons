@@ -3,6 +3,8 @@
 src/**
 scripts/**
 catalog/**
+gallery/**
+dist/**
 .github/**
 .gitattributes
 CONTRIBUTING.md
