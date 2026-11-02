@@ -16,7 +16,7 @@ const theme = JSON.parse(readFileSync(resolve(projectRoot, 'themes/icon-theme.js
 function fixture(t) {
     const root = mkdtempSync(join(tmpdir(), 'jerry-gallery-'));
     t.after(() => rmSync(root, { recursive: true, force: true }));
-    for (const path of ['catalog', 'icons', 'assets', 'gallery', 'package.json', 'LICENSE']) {
+    for (const path of ['catalog', 'icons', 'assets', 'gallery', 'package.json', 'LICENSE', 'ICON_NOTICES.txt']) {
         cpSync(resolve(projectRoot, path), resolve(root, path), { recursive: true });
     }
     return root;
@@ -76,7 +76,7 @@ test('static build is self-contained, current and repeatable', t => {
             assert.deepEqual(readFileSync(join(first.output, path)), readFileSync(join(projectRoot, path)));
         }
     }
-    for (const filename of ['index.html', 'styles.css', 'app.mjs', 'model.mjs', 'assets/logo.png', 'LICENSE.txt']) {
+    for (const filename of ['index.html', 'styles.css', 'app.mjs', 'model.mjs', 'assets/logo.png', 'LICENSE.txt', 'ICON_NOTICES.txt']) {
         assert.ok(existsSync(join(first.output, filename)));
     }
     writeFileSync(join(first.output, 'stale.txt'), 'stale generated file');

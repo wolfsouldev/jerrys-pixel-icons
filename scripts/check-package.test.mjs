@@ -17,6 +17,7 @@ function fixture() {
         files.set(`extension/${normalized}`, readFileSync(resolve(projectRoot, path)));
     }
     add(manifest.icon);
+    add('ICON_NOTICES.txt');
     for (const contribution of manifest.contributes.iconThemes) {
         add(contribution.path);
         const theme = JSON.parse(readFileSync(resolve(projectRoot, contribution.path), 'utf8'));

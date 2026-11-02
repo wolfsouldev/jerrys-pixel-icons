@@ -1,0 +1,45 @@
+Jerry's Pixel Icons — artwork notices
+
+The ten extra-pack SVGs were drawn for this project on an integer 16x16 pixel
+grid. No raster or vector file was downloaded and repackaged as a new icon.
+The existing artwork and its notices are not changed by this addition.
+
+LICENSE EXCEPTIONS AND ATTRIBUTION
+
+icons/files/angular.svg
+  Pixel-art adaptation of the Angular logo, Angular Team / Google.
+  Reference: https://angular.dev/press-kit
+  License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+  https://creativecommons.org/licenses/by/4.0/
+  Changes: simplified integer-grid outline and flat pixel-art colors.
+  This adapted artwork is distributed under CC BY 4.0, rather than the project's
+  general MIT license. Attribution is also embedded in the SVG description.
+
+icons/files/kubernetes.svg
+  Pixel-art adaptation of the Kubernetes wheel, The Kubernetes Authors.
+  Reference: https://github.com/kubernetes/kubernetes/tree/master/logo
+  The original logo offers Apache-2.0 or CC BY 4.0; this adaptation uses CC BY 4.0.
+  https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/LICENSE
+  https://creativecommons.org/licenses/by/4.0/
+  Changes: simplified seven-spoke wheel, palette and integer pixel grid.
+  This adapted artwork is distributed under CC BY 4.0. Attribution is also
+  embedded in the SVG description.
+
+OTHER NEW DRAWINGS AND VISUAL REFERENCES
+
+The new pdf, archive, font, jupyter, nuxt, vitest, playwright and terraform SVG
+drawings are contributed under the project's MIT license (see LICENSE).
+PDF, archive and font use original document/zipper/letterform illustrations, not
+third-party application logos. The Jupyter icon uses an original orange notebook
+and code cell, not a modified Jupyter orbit logo.
+
+Technology names identify supported files. Visual references:
+  Jupyter:    https://jupyter.org/governance/trademarks/
+  Nuxt:       https://nuxt.com/design-kit
+  Vitest:     https://vitest.dev/
+  Playwright: https://playwright.dev/
+  Terraform:  https://developer.hashicorp.com/terraform
+
+Names and trademarks remain with their respective owners. These custom icons
+are not official brand assets and do not imply endorsement or affiliation.
+Copyright licenses do not grant trademark rights.

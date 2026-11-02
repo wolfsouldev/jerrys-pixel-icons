@@ -131,3 +131,24 @@ test('captures light, dark and collection previews', async ({ page }, testInfo) 
     await page.locator('#collection').scrollIntoViewIfNeeded();
     await page.screenshot({ path: testInfo.outputPath('gallery-collection.png') });
 });
+
+test('the extra pack is searchable, displays original SVGs and exposes its credits', async ({ page }) => {
+    await page.goto('/');
+    for (const [id, query] of [['pdf', '.pdf'], ['archive', '.zip'], ['font', '.woff2'],
+        ['jupyter', '.ipynb'], ['angular', 'angular.json'], ['nuxt', 'nuxt.config.ts'],
+        ['vitest', 'vitest.config.mts'], ['playwright', 'playwright.config.mjs'],
+        ['kubernetes', 'k8s.yaml'], ['terraform', '.tf.json']]) {
+        await page.getByRole('searchbox').fill(query);
+        const card = page.locator(`.icon-card[data-key="file/${id}"]`);
+        await expect(card).toBeVisible();
+        await expect(card.locator('img')).toHaveAttribute('src', `icons/files/${id}.svg`);
+        await card.click();
+        await expect(page.locator('#download-icon')).toHaveAttribute('href', `icons/files/${id}.svg`);
+        await expect(page.locator('#detail-id')).toHaveText(id);
+        await page.keyboard.press('Escape');
+    }
+    const response = await page.request.get('/ICON_NOTICES.txt');
+    expect(response.status()).toBe(200);
+    expect(await response.text()).toContain('CC BY 4.0');
+    await expect(page.getByRole('link', { name: 'Créditos de iconos' })).toHaveAttribute('href', './ICON_NOTICES.txt');
+});

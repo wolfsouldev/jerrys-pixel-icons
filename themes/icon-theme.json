@@ -9,11 +9,17 @@
     "_folder_open": {
       "iconPath": "../icons/folders/folder-open.svg"
     },
+    "angular": {
+      "iconPath": "../icons/files/angular.svg"
+    },
     "api": {
       "iconPath": "../icons/folders/api.svg"
     },
     "api_open": {
       "iconPath": "../icons/folders/api-open.svg"
+    },
+    "archive": {
+      "iconPath": "../icons/files/archive.svg"
     },
     "ase": {
       "iconPath": "../icons/files/ase.svg"
@@ -174,6 +180,9 @@
     "favicon": {
       "iconPath": "../icons/files/favicon.svg"
     },
+    "font": {
+      "iconPath": "../icons/files/font.svg"
+    },
     "form": {
       "iconPath": "../icons/folders/forms.svg"
     },
@@ -255,8 +264,14 @@
     "jsx": {
       "iconPath": "../icons/files/jsx.svg"
     },
+    "jupyter": {
+      "iconPath": "../icons/files/jupyter.svg"
+    },
     "kotlin": {
       "iconPath": "../icons/files/kotlin.svg"
+    },
+    "kubernetes": {
+      "iconPath": "../icons/files/kubernetes.svg"
     },
     "layouts": {
       "iconPath": "../icons/folders/layouts.svg"
@@ -321,14 +336,23 @@
     "npm": {
       "iconPath": "../icons/files/npm.svg"
     },
+    "nuxt": {
+      "iconPath": "../icons/files/nuxt.svg"
+    },
     "pages": {
       "iconPath": "../icons/folders/pages.svg"
     },
     "pages_open": {
       "iconPath": "../icons/folders/pages-open.svg"
     },
+    "pdf": {
+      "iconPath": "../icons/files/pdf.svg"
+    },
     "php": {
       "iconPath": "../icons/files/php.svg"
+    },
+    "playwright": {
+      "iconPath": "../icons/files/playwright.svg"
     },
     "pnpm": {
       "iconPath": "../icons/files/pnpm.svg"
@@ -447,6 +471,9 @@
     "tailwind": {
       "iconPath": "../icons/files/tailwind.svg"
     },
+    "terraform": {
+      "iconPath": "../icons/files/terraform.svg"
+    },
     "test": {
       "iconPath": "../icons/folders/test.svg"
     },
@@ -510,6 +537,9 @@
     "vite": {
       "iconPath": "../icons/files/vite.svg"
     },
+    "vitest": {
+      "iconPath": "../icons/files/vitest.svg"
+    },
     "vs": {
       "iconPath": "../icons/files/vs.svg"
     },
@@ -548,12 +578,14 @@
   "folder": "_folder",
   "folderExpanded": "_folder_open",
   "fileExtensions": {
+    "7z": "archive",
     "ase": "ase",
     "aseprite": "ase",
     "astro": "astro",
     "avi": "vid",
     "bash": "shell",
     "bat": "bat",
+    "bz2": "archive",
     "c": "c",
     "cc": "cpp",
     "cjs": "js",
@@ -569,10 +601,12 @@
     "cxx": "cpp",
     "dart": "dart",
     "docx": "docx",
+    "eot": "font",
     "fish": "shell",
     "go": "go",
     "gql": "gql",
     "graphql": "gql",
+    "gz": "archive",
     "h": "h",
     "htm": "html",
     "html": "html",
@@ -580,6 +614,7 @@
     "ico": "svg",
     "info": "readme",
     "ini": "ini",
+    "ipynb": "jupyter",
     "java": "java",
     "jpeg": "img",
     "jpg": "img",
@@ -601,6 +636,8 @@
     "mts": "ts",
     "navigation.js": "router",
     "navigation.ts": "router",
+    "otf": "font",
+    "pdf": "pdf",
     "php": "php",
     "png": "img",
     "pptx": "pptx",
@@ -612,6 +649,7 @@
     "pyi": "py",
     "pyw": "py",
     "r": "r",
+    "rar": "archive",
     "razor": "razor",
     "rb": "ruby",
     "route.js": "router",
@@ -633,25 +671,42 @@
     "svelte": "svelte",
     "svg": "svg",
     "swift": "swift",
+    "tar": "archive",
+    "tar.bz2": "archive",
+    "tar.gz": "archive",
+    "tar.xz": "archive",
+    "tar.zst": "archive",
     "targets": "xml",
+    "tf": "terraform",
+    "tf.json": "terraform",
+    "tfvars": "terraform",
+    "tfvars.json": "terraform",
+    "tgz": "archive",
     "toml": "toml",
     "ts": "ts",
     "tsx": "tsx",
+    "ttf": "font",
     "txt": "txt",
     "urls.py": "router",
     "vsix": "vsix",
     "vue": "vue",
     "webm": "vid",
     "webp": "img",
+    "woff": "font",
+    "woff2": "font",
     "xlsx": "xlsx",
     "xml": "xml",
+    "xz": "archive",
     "yaml": "yaml",
     "yml": "yaml",
     "zig": "zig",
+    "zip": "archive",
     "zon": "zig",
-    "zsh": "shell"
+    "zsh": "shell",
+    "zst": "archive"
   },
   "fileNames": {
+    ".angular-cli.json": "angular",
     ".dockerignore": "docker",
     ".env": "env",
     ".env.development": "env",
@@ -661,12 +716,16 @@
     ".gitattributes": "git",
     ".gitignore": "git",
     ".gitmodules": "git",
+    ".kube/config": "kubernetes",
     ".npmrc": "npm",
+    ".nuxtignore": "nuxt",
     ".prettierignore": "prettier",
     ".prettierrc": "prettier",
+    ".terraform.lock.hcl": "terraform",
     ".vscode-test.js": "vscode",
     ".vscode-test.mjs": "vscode",
     ".vscodeignore": "vscode",
+    "angular.json": "angular",
     "astro.config.js": "astro",
     "astro.config.mjs": "astro",
     "bun.lock": "bun",
@@ -682,6 +741,13 @@
     "favicon.ico": "favicon",
     "favicon.png": "favicon",
     "favicon.svg": "favicon",
+    "k8s.yaml": "kubernetes",
+    "k8s.yml": "kubernetes",
+    "kubeconfig": "kubernetes",
+    "kubernetes.yaml": "kubernetes",
+    "kubernetes.yml": "kubernetes",
+    "kustomization.yaml": "kubernetes",
+    "kustomization.yml": "kubernetes",
     "license": "license",
     "license.md": "license",
     "license.txt": "license",
@@ -690,8 +756,18 @@
     "next.config.js": "next",
     "next.config.mjs": "next",
     "next.config.ts": "next",
+    "ngsw-config.json": "angular",
+    "nuxt.config.js": "nuxt",
+    "nuxt.config.mjs": "nuxt",
+    "nuxt.config.ts": "nuxt",
     "package-lock.json": "node2",
     "package.json": "node2",
+    "playwright.config.cjs": "playwright",
+    "playwright.config.cts": "playwright",
+    "playwright.config.js": "playwright",
+    "playwright.config.mjs": "playwright",
+    "playwright.config.mts": "playwright",
+    "playwright.config.ts": "playwright",
     "pnpm-lock.yaml": "pnpm",
     "readme": "readme",
     "readme.md": "readme",
@@ -713,6 +789,12 @@
     "vite.config.js": "vite",
     "vite.config.mjs": "vite",
     "vite.config.ts": "vite",
+    "vitest.config.cjs": "vitest",
+    "vitest.config.cts": "vitest",
+    "vitest.config.js": "vitest",
+    "vitest.config.mjs": "vitest",
+    "vitest.config.mts": "vitest",
+    "vitest.config.ts": "vitest",
     "yarn.lock": "yarn"
   },
   "folderNames": {

@@ -92,6 +92,7 @@ export function validatePackage(files, root = projectRoot) {
         }
     }
     checkFile(manifest.icon);
+    checkFile('ICON_NOTICES.txt');
     for (const contribution of manifest.contributes.iconThemes) {
         checkFile(contribution.path);
         const theme = JSON.parse(readFileSync(resolve(root, contribution.path), 'utf8'));

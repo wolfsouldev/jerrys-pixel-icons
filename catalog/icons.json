@@ -691,6 +691,178 @@
       "tags": [
         "pixel art"
       ]
+    },
+    {
+      "id": "pdf",
+      "label": "PDF",
+      "tags": [
+        "documento",
+        "document"
+      ],
+      "extensions": [
+        "pdf"
+      ]
+    },
+    {
+      "id": "archive",
+      "label": "Comprimidos",
+      "tags": [
+        "archive",
+        "zip",
+        "7zip",
+        "gzip",
+        "tar",
+        "archivo"
+      ],
+      "extensions": [
+        "zip",
+        "7z",
+        "rar",
+        "tar",
+        "gz",
+        "tgz",
+        "bz2",
+        "xz",
+        "zst",
+        "tar.gz",
+        "tar.bz2",
+        "tar.xz",
+        "tar.zst"
+      ]
+    },
+    {
+      "id": "font",
+      "label": "Fuentes tipográficas",
+      "tags": [
+        "font",
+        "fonts",
+        "tipografia",
+        "typeface"
+      ],
+      "extensions": [
+        "woff",
+        "woff2",
+        "ttf",
+        "otf",
+        "eot"
+      ]
+    },
+    {
+      "id": "jupyter",
+      "label": "Jupyter Notebook",
+      "tags": [
+        "notebook",
+        "notebooks",
+        "python",
+        "ipython"
+      ],
+      "extensions": [
+        "ipynb"
+      ]
+    },
+    {
+      "id": "angular",
+      "label": "Angular",
+      "tags": [
+        "framework",
+        "frontend"
+      ],
+      "names": [
+        "angular.json",
+        ".angular-cli.json",
+        "ngsw-config.json"
+      ]
+    },
+    {
+      "id": "nuxt",
+      "label": "Nuxt",
+      "tags": [
+        "vue",
+        "framework",
+        "frontend"
+      ],
+      "names": [
+        "nuxt.config.ts",
+        "nuxt.config.js",
+        "nuxt.config.mjs",
+        ".nuxtignore"
+      ]
+    },
+    {
+      "id": "vitest",
+      "label": "Vitest",
+      "tags": [
+        "testing",
+        "test",
+        "pruebas",
+        "vite"
+      ],
+      "names": [
+        "vitest.config.ts",
+        "vitest.config.js",
+        "vitest.config.mts",
+        "vitest.config.mjs",
+        "vitest.config.cts",
+        "vitest.config.cjs"
+      ]
+    },
+    {
+      "id": "playwright",
+      "label": "Playwright",
+      "tags": [
+        "testing",
+        "test",
+        "pruebas",
+        "e2e",
+        "browser"
+      ],
+      "names": [
+        "playwright.config.ts",
+        "playwright.config.js",
+        "playwright.config.mts",
+        "playwright.config.mjs",
+        "playwright.config.cts",
+        "playwright.config.cjs"
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "label": "Kubernetes",
+      "tags": [
+        "k8s",
+        "kube",
+        "containers",
+        "contenedores"
+      ],
+      "names": [
+        "kubernetes.yaml",
+        "kubernetes.yml",
+        "k8s.yaml",
+        "k8s.yml",
+        "kustomization.yaml",
+        "kustomization.yml",
+        "kubeconfig",
+        ".kube/config"
+      ]
+    },
+    {
+      "id": "terraform",
+      "label": "Terraform",
+      "tags": [
+        "iac",
+        "infrastructure",
+        "infraestructura",
+        "hashicorp"
+      ],
+      "extensions": [
+        "tf",
+        "tfvars",
+        "tf.json",
+        "tfvars.json"
+      ],
+      "names": [
+        ".terraform.lock.hcl"
+      ]
     }
   ],
   "folders": [

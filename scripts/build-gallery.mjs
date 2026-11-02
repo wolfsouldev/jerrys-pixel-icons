@@ -58,6 +58,7 @@ export function buildGallery(root = projectRoot) {
     }
     copy('assets/logo.png', 'assets/logo.png');
     copy('LICENSE', 'LICENSE.txt');
+    copy('ICON_NOTICES.txt');
     for (const path of new Set(data.entries.flatMap(entry => [entry.icon, entry.openIcon].filter(Boolean)))) {
         copy(path);
     }

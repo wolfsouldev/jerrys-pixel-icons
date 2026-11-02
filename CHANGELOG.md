@@ -16,6 +16,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Added
 
+- Ten native pixel-art SVGs: PDF, compressed archives, fonts, Jupyter Notebook,
+  Angular, Nuxt, Vitest, Playwright, Kubernetes and Terraform.
+- Specific file/extension associations for the new pack, preserving generic
+  JSON/YAML/TypeScript mappings and unrelated existing icons.
+- Artwork attribution/license notices distributed with the gallery and VSIX.
+
 - A same-repository static icon gallery, generated from the canonical catalog,
   with search, type filters, sorting, open-folder previews, light/dark appearance,
   association details, original SVG downloads and URL-persisted search state.

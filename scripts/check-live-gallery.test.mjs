@@ -39,11 +39,11 @@ for (const url of ['http://example.com', 'ftp://example.com', 'https://user:secr
 }
 
 test('expected publication includes the UI, data and every unique SVG, not source files', () => {
-    for (const path of ['index.html', 'styles.css', 'app.mjs', 'model.mjs', 'data.json', 'assets/logo.png', 'LICENSE.txt']) {
+    for (const path of ['index.html', 'styles.css', 'app.mjs', 'model.mjs', 'data.json', 'assets/logo.png', 'LICENSE.txt', 'ICON_NOTICES.txt']) {
         assert.ok(files.has(path));
     }
     assert.equal([...files.keys()].filter(path => path.endsWith('.svg')).length, assets);
-    assert.equal(files.size, assets + 7);
+    assert.equal(files.size, assets + 8);
     assert.ok([...files.keys()].every(path => !path.startsWith('catalog/') && !path.startsWith('scripts/')));
 });
 

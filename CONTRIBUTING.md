@@ -159,6 +159,11 @@ claros y oscuros y evita que toda la silueta desaparezca en uno de ellos.
 - Carpetas: `icons/folders/<nombre>.svg` y `<nombre>-open.svg`.
 - Evita cambiar IDs históricos, pues también se usan en las pruebas y asociaciones.
 
+Los diez SVG del paquete adicional usan geometría nativa de píxeles enteros y
+`viewBox="0 0 16 16"`, con exportación de 256 × 256 y bordes `crispEdges`.
+No conviertas esos SVG a PNG incrustado. Los créditos y excepciones de licencia
+están en `ICON_NOTICES.txt`, que debe conservarse en la web y el VSIX.
+
 ## 4. Revisión visual y pull request
 
 1. Ejecuta las comprobaciones y pulsa `F5`.

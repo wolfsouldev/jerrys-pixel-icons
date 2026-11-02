@@ -30,6 +30,7 @@ export function expectedGalleryFiles(root = projectRoot) {
     files.set('data.json', Buffer.from(`${JSON.stringify(data, null, 2)}\n`));
     files.set('assets/logo.png', readFileSync(resolve(root, 'assets/logo.png')));
     files.set('LICENSE.txt', readFileSync(resolve(root, 'LICENSE')));
+    files.set('ICON_NOTICES.txt', readFileSync(resolve(root, 'ICON_NOTICES.txt')));
     for (const path of new Set(data.entries.flatMap(entry => [entry.icon, entry.openIcon].filter(Boolean)))) {
         files.set(path, readFileSync(resolve(root, path)));
     }

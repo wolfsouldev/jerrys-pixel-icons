@@ -158,6 +158,9 @@ optional custom domains. The default expected URL is
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+Icon-specific attribution and license exceptions (Angular and Kubernetes artwork)
+are documented in [ICON_NOTICES.txt](ICON_NOTICES.txt), also included in the gallery
+and VSIX. Brand names and trademarks belong to their respective owners.
 
 
 
