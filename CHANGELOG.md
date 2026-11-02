@@ -21,7 +21,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
   association details, original SVG downloads and URL-persisted search state.
 - Optional catalog presentation labels and search tags without changing theme output.
 - Standalone gallery build/local-preview commands and desktop/mobile browser tests.
-- Gallery build artifacts and Chromium browser checks in CI, without deployment.
+- Gallery build artifacts and Chromium browser checks in CI.
+- Gated GitHub Pages deployment from `master` after the complete test matrix and
+  browser checks, with job-scoped permissions and a protected deployment environment.
+- Post-deployment HTTP verification of every published gallery file against the
+  tested commit, with bounded concurrency, timeouts and CDN-propagation retries.
+- Regression tests for publication guards, permissions and stale/missing public assets.
+- Pages activation, deployment troubleshooting and optional custom-domain documentation.
 
 - Static theme validation and regression tests for associations, SVG XML, and folder states.
 - Automatic linting, validation, and tests before packaging.
@@ -29,7 +35,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
   and a read-only stale-output check.
 - Automatic closed/open folder definitions and aliases from one catalog entry.
 - GitHub Actions validation and VSIX packaging checks on Node.js 22 and 24, with
-  downloadable build artifacts and no automatic publication.
+  downloadable build artifacts and no automatic Marketplace publication.
 - Verification of actual VSIX contents against the source theme and icon files.
 - A contributor guide covering palette references, logical grid, SVG export,
   naming, catalog edits, and manual visual checks.

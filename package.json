@@ -37,6 +37,7 @@
     "package:check": "node scripts/check-package.mjs",
     "gallery:build": "node scripts/build-gallery.mjs",
     "gallery:preview": "pnpm run gallery:build && node scripts/serve-gallery.mjs",
+    "gallery:verify": "node scripts/check-live-gallery.mjs",
     "test:gallery": "playwright test --config gallery/playwright.config.mjs"
   },
   "devDependencies": {
@@ -52,6 +53,7 @@
     "eslint": "^9.36.0",
     "fast-xml-parser": "^5.11.2",
     "typescript": "^5.9.3",
+    "yaml": "^2.9.1",
     "yauzl": "^3.4.0"
   }
 }

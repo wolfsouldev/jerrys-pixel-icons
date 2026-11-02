@@ -58,8 +58,8 @@ logo, licencia y los SVG referenciados a **`dist/gallery/`**. Esa carpeta es gen
 y se reemplaza en cada build. No guarda estado de usuarios ni es una segunda fuente.
 
 La salida es autocontenida y usa rutas relativas: puede servirse en la raíz o en
-una subcarpeta de un alojamiento estático. Publicar o configurar un dominio es un
-paso aparte; estos comandos no despliegan nada. La galería y sus resultados de
+una subcarpeta de un alojamiento estático. Estos comandos locales no despliegan
+nada; el workflow de Pages descrito más abajo realiza la publicación. La galería y sus resultados de
 pruebas están excluidos del VSIX y verificados por `package:check`.
 
 ## Pruebas
@@ -86,6 +86,84 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium pnpm run test:gallery
 El soporte oficial de Playwright se comprueba con su Chromium asociado; un binario
 del sistema puede diferir. Las capturas y trazas están en
 `dist/gallery-test-results/`, excluidas de Git y del paquete instalable. CI instala
-el Chromium asociado y conserva capturas/trazas como artefactos; no publica la web.
+el Chromium asociado y conserva capturas/trazas como artefactos. Los pull requests
+solo validan: no publican la web.
 
 La revisión de esta web no sustituye la revisión del tema real dentro de VS Code.
+
+## Publicar con GitHub Pages
+
+El workflow existente **Validate and package**, en `.github/workflows/ci.yml`,
+también publica la galería después de las validaciones. No crea releases ni publica
+la extensión en Marketplace.
+
+### Activación inicial del repositorio
+
+1. En el repositorio, abre **Settings → Pages**.
+2. En **Build and deployment → Source**, selecciona **GitHub Actions**.
+3. Sube a `master` el workflow y los cambios revisados. No subas `dist/`: la web
+   se construye dentro de Actions con el lockfile congelado.
+4. En **Actions → Validate and package**, espera los checks de Node 22 y 24,
+   las pruebas de navegador, **Prepare GitHub Pages**, **Deploy GitHub Pages** y
+   **Verify published gallery**.
+5. Abre la URL que devuelve el despliegue, no la des por publicada hasta que pase
+   la verificación HTTP final.
+
+URL predeterminada prevista para este repositorio:
+`https://wolfsouldev.github.io/jerrys-pixel-icons/`.
+
+Si se necesita repetir el proceso, usa **Run workflow** seleccionando `master`, o:
+
+```sh
+gh workflow run ci.yml --ref master
+```
+
+Eso requiere una sesión de GitHub CLI (`gh auth login`) y los permisos adecuados.
+Un push normal ya inicia el proceso: no es necesario iniciar otro workflow en paralelo.
+
+### Qué se publica y qué lo protege
+
+- Solo el contenido de **`dist/gallery/`**, con el artefacto específico de Pages.
+- Solo pushes o ejecuciones manuales de **`master`**; nunca PRs, tags ni otras ramas.
+- Se exige que finalicen correctamente ambas versiones de Node y las pruebas
+  de escritorio/móvil del **mismo commit**.
+- Solo el job de despliegue recibe `pages: write` e `id-token: write`; utiliza el
+  entorno protegido `github-pages` y no requiere guardar un token personal como secreto.
+- Un despliegue de producción activo no se cancela al llegar un push nuevo.
+- El último job comprueba por HTTP el HTML, CSS, módulos JavaScript, catálogo,
+  logo, licencia y todos los SVG, comparando sus bytes con el commit desplegado.
+  También comprueba el tipo MIME de los módulos y reintenta ante propagación del CDN.
+
+Para repetir la comprobación desde el checkout del mismo commit:
+
+```sh
+pnpm run gallery:verify --url https://wolfsouldev.github.io/jerrys-pixel-icons/
+```
+
+Para la vista local también se permite HTTP en loopback:
+
+```sh
+pnpm run gallery:verify --url http://127.0.0.1:4173/ --attempts 1
+```
+
+### Si falla la publicación
+
+- **Pages no está habilitado:** selecciona `GitHub Actions` como origen en Settings
+  y repite el workflow. `configure-pages` no intenta habilitarlo con un PAT oculto.
+- **Waiting for approval / deployment protection:** el mantenedor debe aprobar
+  el entorno `github-pages` o revisar sus reglas. No elimines protecciones para saltarte la revisión.
+- **Un check falla:** corrige ese fallo; los jobs de publicación no deben ejecutarse saltándolo.
+- **Verificación HTTP falla:** puede haber contenido antiguo o archivos ausentes;
+  revisa el error y no confundas el éxito del deploy con el éxito de la comprobación.
+
+### Dominio propio, opcional
+
+No necesitas comprar un dominio para usar la dirección `github.io`. Para usar uno
+que te pertenezca, verifica su propiedad, añádelo en **Settings → Pages → Custom
+domain**, configura sus DNS y activa HTTPS cuando esté disponible. Este cambio no
+lo hace el workflow y no se debe modificar ningún registro de correo u otro servicio.
+
+Con publicación por Actions no necesitas un archivo `CNAME` en la galería; el
+dominio se administra en la configuración de Pages. Consulta la
+[guía oficial de dominios](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+y la [guía de workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

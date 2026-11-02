@@ -146,8 +146,14 @@ pnpm run gallery:preview
 
 Open **http://127.0.0.1:4173**. The gallery reads the same source catalog as the theme.
 `pnpm run gallery:build` creates a self-contained static site in `dist/gallery/`;
-it is excluded from the VSIX and does not deploy automatically.
-See the [gallery guide](gallery/README.md) for browser tests and build details.
+it is excluded from the VSIX. Local build/preview commands do not deploy anything.
+Once GitHub Pages is enabled with **GitHub Actions** as the publishing source,
+pushes to `master` deploy the gallery only after the Node matrix and browser checks
+pass. Pull requests never deploy. A final HTTP check verifies the published files
+against the tested commit.
+See the [gallery guide](gallery/README.md) for setup, browser tests, publication and
+optional custom domains. The default expected URL is
+`https://wolfsouldev.github.io/jerrys-pixel-icons/`.
 
 ## License
 

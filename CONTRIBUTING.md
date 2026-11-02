@@ -185,10 +185,18 @@ y comprueba escritorio y móvil. La galería se empaqueta por separado del VSIX.
 Node.js 22 y 24. Instala el lockfile sin scripts de instalación, ejecuta las pruebas,
 empaqueta y revisa el VSIX. El paquete queda como artefacto durante siete días.
 
-El flujo solo tiene permisos de lectura del repositorio, no usa credenciales de
-Marketplace y **no publica versiones ni crea releases**. Las acciones están fijadas
-a commits: revisa su código y conserva una referencia de versión al actualizarlas.
-El primer resultado remoto solo se podrá confirmar después de subir el cambio.
+Los jobs de validación solo tienen permisos de lectura del repositorio. Después
+de pasar esos checks, los pushes y ejecuciones manuales de `master` pueden publicar
+la galería en GitHub Pages, si está habilitado como origen **GitHub Actions**.
+Los PRs, tags y otras ramas nunca despliegan. Únicamente el job de publicación recibe
+permisos de escritura de Pages y OIDC, dentro del entorno protegido `github-pages`.
+Después se verifican por HTTP los archivos públicos contra el commit desplegado.
+Consulta [la guía de publicación](gallery/README.md#publicar-con-github-pages).
+
+No se usan credenciales de Marketplace y **no se publica la extensión ni se crean
+releases**. Las acciones están fijadas a commits: revisa su código y conserva una
+referencia de versión al actualizarlas. Un workflow preparado o un deploy exitoso
+no prueban por sí solos que la página pública esté funcionando.
 
 Antes de publicar manualmente una versión, el mantenedor debe esperar los checks
 de ambas versiones de Node y completar la revisión visual. Para impedir merges
