@@ -2,6 +2,20 @@ import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
 export default [{
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+    },
+    rules: {
+        "no-unused-vars": "error",
+        "no-unreachable": "error",
+        "valid-typeof": "error",
+        "constructor-super": "error",
+        "no-constant-condition": "error",
+        eqeqeq: "error",
+    },
+}, {
     files: ["**/*.ts"],
 }, {
     plugins: {

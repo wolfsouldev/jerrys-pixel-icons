@@ -25,12 +25,12 @@
     ]
   },
   "scripts": {
-    "compile": "tsc -p ./",
-    "package": "vsce package",
-    "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "validate": "node scripts/validate-theme.mjs",
+    "lint": "eslint scripts",
+    "pretest": "pnpm run lint && pnpm run validate",
+    "test": "node --test scripts/validate-theme.test.mjs",
+    "vscode:prepublish": "pnpm test",
+    "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -42,6 +42,7 @@
     "@vscode/test-electron": "^2.5.2",
     "@vscode/vsce": "^3.7.0",
     "eslint": "^9.36.0",
+    "fast-xml-parser": "^5.11.2",
     "typescript": "^5.9.3"
   }
 }

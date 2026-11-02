@@ -98,6 +98,31 @@ Any contributions you make are **greatly appreciated**.
 
 ★ If you want to contribute an icon, just make sure it's a 16x16 PNG or SVG!
 
+### Development checks
+
+With Node.js 22 or newer and pnpm installed:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm test
+pnpm run package
+```
+
+This is a declarative icon theme: no TypeScript compilation or `src/` directory is needed.
+`pnpm run validate` checks the contributed theme, icon references, SVG XML, unsupported
+glob patterns, duplicate case-insensitive associations, and matching closed/open folder names.
+`pnpm test` also runs linting and regression tests. Packaging runs these checks again
+and creates a local `.vsix`; it does not publish the extension.
+
+Use exact names in `fileNames` (for example, `favicon.svg`) and compound extensions
+in `fileExtensions` (for example, `module.ts` or `routes.ts`), not glob patterns.
+Routing files such as `route.ts`, `router.js`, and `urls.py` are mapped explicitly;
+arbitrary names such as `appRouter.ts` keep their normal language icon.
+
+Press `F5` to validate the theme and open an Extension Development Host. Select
+**Jerry's Pixel** under **Preferences: File Icon Theme** and visually inspect both
+closed and expanded folders. Automated checks do not replace this rendering check.
+
 <!-- LICENSE -->
 ## License
 
