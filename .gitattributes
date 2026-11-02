@@ -1,0 +1,2 @@
+# The generator compares bytes; keep its committed output stable on every OS.
+themes/icon-theme.json text eol=lf

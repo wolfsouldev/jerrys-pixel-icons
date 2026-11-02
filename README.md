@@ -27,7 +27,7 @@ logo path: assets/logo.png
         <br />
         <a href="https://github.com/wolfsouldev/jerrys-pixel-icons/issues">Report Bug</a>
         •
-        <a href="https://github.com/wolfsouldev/jerrys-pixel-icons/issues">Request Icon</a>
+        <a href="https://github.com/wolfsouldev/jerrys-pixel-icons/issues/new?template=icon-request.yml">Request Icon</a>
     </p>
 </p>
 
@@ -60,7 +60,7 @@ logo path: assets/logo.png
 ### Installation
 
 1. Open VS Code
-2. Go to the Extensions tab Ctrl+Shift+X`
+2. Go to the Extensions tab `Ctrl+Shift+X`
 3. Search for "Jerry's Pixel Icons"
 4. Click Install
 
@@ -71,7 +71,7 @@ Or install directly from the [VS Code Marketplace](https://marketplace.visualstu
 
 1. Press `Ctrl+Shift+P`
 2. Type "File Icon Theme"
-3. Select "Jerry's Pixel Icons"
+3. Select "Jerry's Pixel"
 
 <!-- REPORT AN ISSUE -->
 ## Reporting Issues
@@ -96,26 +96,36 @@ Any contributions you make are **greatly appreciated**.
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-★ If you want to contribute an icon, just make sure it's a 16x16 PNG or SVG!
+Read the [contributor guide](CONTRIBUTING.md) for the source catalog, pixel-art
+grid and palette, SVG export, naming rules, visual checks, and PR checklist.
+New icons should use a 16×16 logical grid and be delivered as SVG assets.
+
+**Edit `catalog/icons.json`, not the generated `themes/icon-theme.json`.**
+Folder names are declared once; the generator creates both closed and open mappings.
 
 ### Development checks
 
-With Node.js 22 or newer and pnpm installed:
+With Node.js 22 or 24 and pnpm 12.15.0 (pinned in `package.json`):
 
 ```sh
-pnpm install --frozen-lockfile
+pnpm install --frozen-lockfile --ignore-scripts
+pnpm run generate
 pnpm test
 pnpm run package
 ```
 
 This is a declarative icon theme: no TypeScript compilation or `src/` directory is needed.
-`pnpm run validate` checks the contributed theme, icon references, SVG XML, unsupported
+`pnpm run generate:check` detects stale generated output without modifying files.
+`pnpm run validate` checks that output, icon references, SVG XML, unsupported
 glob patterns, duplicate case-insensitive associations, and matching closed/open folder names.
 `pnpm test` also runs linting and regression tests. Packaging runs these checks again
-and creates a local `.vsix`; it does not publish the extension.
+and creates a local `.vsix`, then verifies its actual contents; it does not publish
+the extension. GitHub Actions runs these checks on pushes and pull requests with
+Node.js 22 and 24, keeping the verified packages as downloadable build artifacts.
 
 Use exact names in `fileNames` (for example, `favicon.svg`) and compound extensions
 in `fileExtensions` (for example, `module.ts` or `routes.ts`), not glob patterns.
+These generated fields come from `files[].names` and `files[].extensions` in the catalog.
 Routing files such as `route.ts`, `router.js`, and `urls.py` are mapped explicitly;
 arbitrary names such as `appRouter.ts` keep their normal language icon.
 

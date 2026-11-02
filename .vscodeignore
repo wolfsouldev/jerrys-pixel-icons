@@ -2,6 +2,10 @@
 .vscode-test/**
 src/**
 scripts/**
+catalog/**
+.github/**
+.gitattributes
+CONTRIBUTING.md
 pnpm-lock.yaml
 .npmrc
 .gitignore

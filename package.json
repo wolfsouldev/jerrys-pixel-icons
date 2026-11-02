@@ -4,6 +4,7 @@
   "description": "Un tema de iconos pixel art personalizado para VS Code",
   "publisher": "MelissaGutierrez",
   "version": "0.3.0",
+  "packageManager": "pnpm@12.15.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/wolfsouldev/jerrys-pixel-icons.git"
@@ -25,12 +26,15 @@
     ]
   },
   "scripts": {
-    "validate": "node scripts/validate-theme.mjs",
+    "generate": "node scripts/generate-theme.mjs",
+    "generate:check": "node scripts/generate-theme.mjs --check",
+    "validate": "pnpm run generate:check && node scripts/validate-theme.mjs",
     "lint": "eslint scripts",
     "pretest": "pnpm run lint && pnpm run validate",
-    "test": "node --test scripts/validate-theme.test.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "vscode:prepublish": "pnpm test",
-    "package": "vsce package --no-dependencies"
+    "package": "vsce package --no-dependencies && pnpm run package:check",
+    "package:check": "node scripts/check-package.mjs"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -43,6 +47,7 @@
     "@vscode/vsce": "^3.7.0",
     "eslint": "^9.36.0",
     "fast-xml-parser": "^5.11.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "yauzl": "^3.4.0"
   }
 }

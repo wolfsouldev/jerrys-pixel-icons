@@ -1,0 +1,923 @@
+{
+  "$schema": "./icons.schema.json",
+  "version": 1,
+  "defaults": {
+    "file": "_file",
+    "folder": "_folder"
+  },
+  "files": [
+    {
+      "id": "_file",
+      "icon": "txt"
+    },
+    {
+      "id": "astro",
+      "extensions": [
+        "astro"
+      ],
+      "names": [
+        "astro.config.js",
+        "astro.config.mjs"
+      ]
+    },
+    {
+      "id": "js",
+      "extensions": [
+        "js",
+        "mjs",
+        "cjs"
+      ]
+    },
+    {
+      "id": "ts",
+      "extensions": [
+        "ts",
+        "mts",
+        "cts"
+      ]
+    },
+    {
+      "id": "tsconfig",
+      "names": [
+        "tsconfig.json"
+      ]
+    },
+    {
+      "id": "html",
+      "extensions": [
+        "html",
+        "htm"
+      ]
+    },
+    {
+      "id": "css",
+      "extensions": [
+        "css"
+      ]
+    },
+    {
+      "id": "sass",
+      "extensions": [
+        "scss",
+        "sass"
+      ]
+    },
+    {
+      "id": "less",
+      "extensions": [
+        "less"
+      ]
+    },
+    {
+      "id": "json",
+      "extensions": [
+        "json",
+        "jsonc"
+      ]
+    },
+    {
+      "id": "md",
+      "extensions": [
+        "md",
+        "markdown"
+      ]
+    },
+    {
+      "id": "py",
+      "extensions": [
+        "py",
+        "pyw",
+        "pyi"
+      ]
+    },
+    {
+      "id": "java",
+      "extensions": [
+        "java"
+      ]
+    },
+    {
+      "id": "javaclass",
+      "extensions": [
+        "class"
+      ]
+    },
+    {
+      "id": "cpp",
+      "extensions": [
+        "cpp",
+        "cxx",
+        "cc"
+      ]
+    },
+    {
+      "id": "c",
+      "extensions": [
+        "c"
+      ]
+    },
+    {
+      "id": "cs",
+      "extensions": [
+        "cs"
+      ]
+    },
+    {
+      "id": "h",
+      "extensions": [
+        "h"
+      ]
+    },
+    {
+      "id": "php",
+      "extensions": [
+        "php"
+      ]
+    },
+    {
+      "id": "go",
+      "extensions": [
+        "go"
+      ]
+    },
+    {
+      "id": "rust",
+      "extensions": [
+        "rs"
+      ]
+    },
+    {
+      "id": "swift",
+      "extensions": [
+        "swift"
+      ]
+    },
+    {
+      "id": "kotlin",
+      "extensions": [
+        "kt",
+        "kts"
+      ]
+    },
+    {
+      "id": "dart",
+      "extensions": [
+        "dart"
+      ]
+    },
+    {
+      "id": "vue",
+      "extensions": [
+        "vue"
+      ]
+    },
+    {
+      "id": "svelte",
+      "extensions": [
+        "svelte"
+      ]
+    },
+    {
+      "id": "jsx",
+      "extensions": [
+        "jsx"
+      ]
+    },
+    {
+      "id": "tsx",
+      "extensions": [
+        "tsx"
+      ]
+    },
+    {
+      "id": "xml",
+      "extensions": [
+        "xml",
+        "targets"
+      ]
+    },
+    {
+      "id": "yaml",
+      "extensions": [
+        "yaml",
+        "yml"
+      ]
+    },
+    {
+      "id": "toml",
+      "extensions": [
+        "toml"
+      ]
+    },
+    {
+      "id": "sql",
+      "extensions": [
+        "sql"
+      ]
+    },
+    {
+      "id": "docker",
+      "names": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "docker-compose.yaml",
+        ".dockerignore"
+      ]
+    },
+    {
+      "id": "git",
+      "names": [
+        ".gitignore",
+        ".gitattributes",
+        ".gitmodules"
+      ]
+    },
+    {
+      "id": "npm",
+      "names": [
+        ".npmrc"
+      ]
+    },
+    {
+      "id": "pnpm",
+      "names": [
+        "pnpm-lock.yaml"
+      ]
+    },
+    {
+      "id": "node"
+    },
+    {
+      "id": "env",
+      "names": [
+        ".env",
+        ".env.local",
+        ".env.development",
+        ".env.production",
+        ".env.test"
+      ]
+    },
+    {
+      "id": "txt",
+      "extensions": [
+        "txt"
+      ]
+    },
+    {
+      "id": "license",
+      "names": [
+        "LICENSE",
+        "LICENSE.md",
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "id": "readme",
+      "extensions": [
+        "info"
+      ],
+      "names": [
+        "README.md",
+        "README",
+        "README.txt"
+      ]
+    },
+    {
+      "id": "powershell",
+      "extensions": [
+        "ps1",
+        "psm1"
+      ]
+    },
+    {
+      "id": "shell",
+      "extensions": [
+        "sh",
+        "bash",
+        "zsh",
+        "fish"
+      ]
+    },
+    {
+      "id": "bat",
+      "extensions": [
+        "bat",
+        "cmd"
+      ]
+    },
+    {
+      "id": "lua",
+      "extensions": [
+        "lua"
+      ]
+    },
+    {
+      "id": "r",
+      "extensions": [
+        "r"
+      ]
+    },
+    {
+      "id": "scala",
+      "extensions": [
+        "scala",
+        "sc"
+      ]
+    },
+    {
+      "id": "prisma",
+      "extensions": [
+        "prisma"
+      ],
+      "names": [
+        "schema.prisma"
+      ]
+    },
+    {
+      "id": "vite",
+      "names": [
+        "vite.config.js",
+        "vite.config.ts",
+        "vite.config.mjs"
+      ]
+    },
+    {
+      "id": "next",
+      "names": [
+        "next.config.js",
+        "next.config.ts",
+        "next.config.mjs"
+      ]
+    },
+    {
+      "id": "nest",
+      "extensions": [
+        "module.ts",
+        "module.js"
+      ]
+    },
+    {
+      "id": "tailwind",
+      "names": [
+        "tailwind.config.js",
+        "tailwind.config.ts"
+      ]
+    },
+    {
+      "id": "bun",
+      "names": [
+        "bun.lockb",
+        "bun.lock"
+      ]
+    },
+    {
+      "id": "gql",
+      "extensions": [
+        "graphql",
+        "gql"
+      ]
+    },
+    {
+      "id": "img",
+      "icon": "png",
+      "extensions": [
+        "png",
+        "jpeg",
+        "jpg",
+        "webp"
+      ]
+    },
+    {
+      "id": "svg",
+      "extensions": [
+        "svg",
+        "ico"
+      ]
+    },
+    {
+      "id": "vid",
+      "icon": "mp4",
+      "extensions": [
+        "mp4",
+        "avi",
+        "webm"
+      ]
+    },
+    {
+      "id": "aud",
+      "icon": "mp3",
+      "extensions": [
+        "mp3"
+      ]
+    },
+    {
+      "id": "yarn",
+      "names": [
+        "yarn.lock"
+      ]
+    },
+    {
+      "id": "changelog",
+      "names": [
+        "CHANGELOG.txt",
+        "changelog",
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "id": "eslint",
+      "names": [
+        "eslint.config.js",
+        "eslint.config.mjs"
+      ]
+    },
+    {
+      "id": "node2",
+      "names": [
+        "package.json",
+        "package-lock.json"
+      ]
+    },
+    {
+      "id": "prettier",
+      "names": [
+        ".prettierrc",
+        ".prettierignore"
+      ]
+    },
+    {
+      "id": "favicon",
+      "names": [
+        "favicon.ico",
+        "favicon.png",
+        "favicon.svg"
+      ]
+    },
+    {
+      "id": "robot",
+      "names": [
+        "robots.txt"
+      ]
+    },
+    {
+      "id": "vscode",
+      "names": [
+        ".vscodeignore",
+        ".vscode-test.mjs",
+        ".vscode-test.js"
+      ]
+    },
+    {
+      "id": "router",
+      "icon": "route",
+      "extensions": [
+        "route.ts",
+        "route.js",
+        "router.ts",
+        "router.js",
+        "routes.ts",
+        "routes.js",
+        "routing.ts",
+        "routing.js",
+        "urls.py",
+        "navigation.ts",
+        "navigation.js"
+      ],
+      "names": [
+        "route.ts",
+        "route.js",
+        "router.ts",
+        "router.js",
+        "routes.ts",
+        "routes.js",
+        "routing.ts",
+        "routing.js",
+        "urls.py",
+        "navigation.ts",
+        "navigation.js"
+      ]
+    },
+    {
+      "id": "zig",
+      "extensions": [
+        "zig",
+        "zon"
+      ]
+    },
+    {
+      "id": "vsix",
+      "extensions": [
+        "vsix"
+      ]
+    },
+    {
+      "id": "http",
+      "extensions": [
+        "http"
+      ]
+    },
+    {
+      "id": "vs",
+      "extensions": [
+        "csproj",
+        "sln"
+      ]
+    },
+    {
+      "id": "conf",
+      "extensions": [
+        "conf",
+        "props"
+      ]
+    },
+    {
+      "id": "docx",
+      "extensions": [
+        "docx"
+      ]
+    },
+    {
+      "id": "xlsx",
+      "extensions": [
+        "xlsx"
+      ]
+    },
+    {
+      "id": "ruby",
+      "extensions": [
+        "rb"
+      ]
+    },
+    {
+      "id": "pptx",
+      "extensions": [
+        "pptx"
+      ]
+    },
+    {
+      "id": "ini",
+      "extensions": [
+        "ini"
+      ]
+    },
+    {
+      "id": "razor",
+      "extensions": [
+        "razor",
+        "cshtml"
+      ]
+    },
+    {
+      "id": "ase",
+      "extensions": [
+        "ase",
+        "aseprite"
+      ]
+    }
+  ],
+  "folders": [
+    {
+      "id": "_folder",
+      "icon": "folder"
+    },
+    {
+      "id": "assets",
+      "names": [
+        "assets",
+        "static"
+      ]
+    },
+    {
+      "id": "components",
+      "names": [
+        "components"
+      ]
+    },
+    {
+      "id": "controller",
+      "names": [
+        "controllers"
+      ]
+    },
+    {
+      "id": "git_folder",
+      "icon": "git",
+      "names": [
+        ".git"
+      ]
+    },
+    {
+      "id": "src",
+      "names": [
+        "src"
+      ]
+    },
+    {
+      "id": "vscode_file",
+      "icon": "vscode",
+      "expandedId": "vscode_open",
+      "names": [
+        ".vscode"
+      ]
+    },
+    {
+      "id": "public",
+      "names": [
+        "public"
+      ]
+    },
+    {
+      "id": "bin",
+      "names": [
+        "dist",
+        "build",
+        "bin",
+        "obj",
+        "release"
+      ]
+    },
+    {
+      "id": "i18n",
+      "names": [
+        "i18n"
+      ]
+    },
+    {
+      "id": "layouts",
+      "names": [
+        "layouts",
+        "layout"
+      ]
+    },
+    {
+      "id": "pages",
+      "names": [
+        "pages",
+        "views"
+      ]
+    },
+    {
+      "id": "styles",
+      "names": [
+        "styles",
+        "style"
+      ]
+    },
+    {
+      "id": "icons",
+      "names": [
+        "icons"
+      ]
+    },
+    {
+      "id": "themes",
+      "names": [
+        "themes"
+      ]
+    },
+    {
+      "id": "debug",
+      "names": [
+        "debug"
+      ]
+    },
+    {
+      "id": "models",
+      "names": [
+        "models"
+      ]
+    },
+    {
+      "id": "node_modules",
+      "names": [
+        "node_modules"
+      ]
+    },
+    {
+      "id": "properties",
+      "names": [
+        "properties"
+      ]
+    },
+    {
+      "id": "services",
+      "names": [
+        "services"
+      ]
+    },
+    {
+      "id": "utils",
+      "names": [
+        "utils"
+      ]
+    },
+    {
+      "id": "content",
+      "names": [
+        "content",
+        "contents"
+      ]
+    },
+    {
+      "id": "api",
+      "names": [
+        "api"
+      ]
+    },
+    {
+      "id": "config_folder",
+      "icon": "config",
+      "names": [
+        "config"
+      ]
+    },
+    {
+      "id": "env_folder",
+      "icon": "env",
+      "names": [
+        "env",
+        ".env"
+      ]
+    },
+    {
+      "id": "middleware",
+      "names": [
+        "middleware",
+        "middlewares"
+      ]
+    },
+    {
+      "id": "routes",
+      "names": [
+        "routes"
+      ]
+    },
+    {
+      "id": "docs",
+      "names": [
+        "docs"
+      ]
+    },
+    {
+      "id": "test",
+      "names": [
+        "tests",
+        "spec",
+        "cypress"
+      ]
+    },
+    {
+      "id": "constants",
+      "names": [
+        "constant",
+        "constants"
+      ]
+    },
+    {
+      "id": "examples",
+      "names": [
+        "examples",
+        "example"
+      ]
+    },
+    {
+      "id": "hooks",
+      "names": [
+        "hooks"
+      ]
+    },
+    {
+      "id": "lib",
+      "names": [
+        "lib"
+      ]
+    },
+    {
+      "id": "cmd",
+      "names": [
+        "cmd"
+      ]
+    },
+    {
+      "id": "data",
+      "names": [
+        "data"
+      ]
+    },
+    {
+      "id": "db",
+      "names": [
+        "db"
+      ]
+    },
+    {
+      "id": "dto",
+      "names": [
+        "dtos",
+        "dto"
+      ]
+    },
+    {
+      "id": "endpoint",
+      "names": [
+        "endpoints",
+        "endpoint"
+      ]
+    },
+    {
+      "id": "entity",
+      "names": [
+        "entity",
+        "entities"
+      ]
+    },
+    {
+      "id": "enum",
+      "icon": "enums",
+      "names": [
+        "enum",
+        "enums"
+      ]
+    },
+    {
+      "id": "form",
+      "icon": "forms",
+      "names": [
+        "form",
+        "forms"
+      ]
+    },
+    {
+      "id": "helper",
+      "names": [
+        "helper",
+        "helpers"
+      ]
+    },
+    {
+      "id": "idea",
+      "names": [
+        ".idea"
+      ]
+    },
+    {
+      "id": "mapper",
+      "names": [
+        "mapper",
+        "mappers"
+      ]
+    },
+    {
+      "id": "repository",
+      "names": [
+        "repository",
+        "repositories"
+      ]
+    },
+    {
+      "id": "scripts",
+      "names": [
+        "scripts"
+      ]
+    },
+    {
+      "id": "store",
+      "names": [
+        "store"
+      ]
+    },
+    {
+      "id": "types",
+      "names": [
+        "types"
+      ]
+    },
+    {
+      "id": "ui",
+      "names": [
+        "ui",
+        "uis"
+      ]
+    },
+    {
+      "id": "upload",
+      "names": [
+        "upload",
+        "uploads"
+      ]
+    },
+    {
+      "id": "user",
+      "names": [
+        "user",
+        "users",
+        "profile",
+        "profiles",
+        "admin",
+        "admins",
+        "client",
+        "clients"
+      ]
+    }
+  ]
+}

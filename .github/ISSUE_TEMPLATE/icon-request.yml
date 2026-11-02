@@ -1,0 +1,52 @@
+name: Solicitar un icono
+description: Propón un icono nuevo o una asociación para un icono existente.
+title: '[Icono]: '
+body:
+  - type: checkboxes
+    id: existing
+    attributes:
+      label: Antes de enviar
+      options:
+        - label: Revisé el catálogo y las solicitudes existentes para evitar duplicados.
+          required: true
+  - type: input
+    id: technology
+    attributes:
+      label: Tecnología, archivo o carpeta
+      placeholder: 'Ejemplo: Vitest, vitest.config.ts o carpeta fixtures'
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Tipo de solicitud
+      options:
+        - Nuevo icono de archivo
+        - Nuevo par de iconos de carpeta (cerrada y abierta)
+        - Asociar nombres a un icono que ya existe
+    validations:
+      required: true
+  - type: textarea
+    id: names
+    attributes:
+      label: Nombres o extensiones exactos
+      description: Un ejemplo real por línea. Sin comodines; indica si es archivo, extensión o carpeta.
+      placeholder: |
+        Archivo: vitest.config.ts
+        Extensión compuesta: test.ts
+        Carpeta: fixtures
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Referencia visual y uso
+      description: Enlaza la fuente oficial o adjunta una captura. Explica cómo debería reconocerse a 16 px y menciona la licencia si aportas arte.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno (si el icono no aparece)
+      placeholder: Versión de VS Code y de la extensión, tema claro/oscuro, nombre exacto y captura del explorador.

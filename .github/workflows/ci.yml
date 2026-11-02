@@ -1,0 +1,60 @@
+name: Validate and package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-package:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm from packageManager
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+        with:
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install locked dependencies without install scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Check generated output, lint and run regression tests
+        run: pnpm test
+
+      - name: Build VSIX and verify its actual contents
+        run: pnpm run package
+
+      - name: Ensure checks did not rewrite generated files or the lockfile
+        run: git diff --exit-code -- themes/icon-theme.json pnpm-lock.yaml
+
+      - name: Keep verified package for manual inspection
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: jerrys-pixel-icons-node-${{ matrix.node }}
+          path: '*.vsix'
+          if-no-files-found: error
+          retention-days: 7
