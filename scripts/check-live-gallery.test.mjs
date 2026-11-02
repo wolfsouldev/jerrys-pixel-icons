@@ -62,6 +62,11 @@ test('missing SVG on the public host fails verification', async () => {
         new Response('not found', { status: 404 }) : undefined) }), /icons\/files\/js.svg: expected HTTP 200, got 404/);
 });
 
+test('missing published attribution notices fail verification', async () => {
+    await assert.rejects(verifyLiveGallery(base, { fetchImpl: fakeFetch(path => path === 'ICON_NOTICES.txt' ?
+        new Response('not found', { status: 404 }) : undefined) }), /ICON_NOTICES.txt: expected HTTP 200/);
+});
+
 test('a changed SVG is detected even with HTTP 200', async () => {
     await assert.rejects(verifyLiveGallery(base, { fetchImpl: fakeFetch(path => path === 'icons/files/js.svg' ?
         new Response('<svg/>') : undefined) }), /icons\/files\/js.svg: public content differs/);

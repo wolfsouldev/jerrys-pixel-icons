@@ -38,6 +38,12 @@ test('package verifier rejects a missing icon', () => {
     assert.match(validatePackage(files).join('\n'), /Missing package asset: icons\/files\/js.svg/);
 });
 
+test('package verifier requires artwork attribution notices', () => {
+    const files = fixture();
+    files.delete('extension/ICON_NOTICES.txt');
+    assert.match(validatePackage(files).join('\n'), /Missing package asset: ICON_NOTICES.txt/);
+});
+
 test('package verifier rejects stale generated output', () => {
     const files = fixture();
     files.set('extension/themes/icon-theme.json', Buffer.from('{}'));

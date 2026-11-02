@@ -697,7 +697,8 @@
       "label": "PDF",
       "tags": [
         "documento",
-        "document"
+        "document",
+        "extra-pack-1"
       ],
       "extensions": [
         "pdf"
@@ -712,7 +713,8 @@
         "7zip",
         "gzip",
         "tar",
-        "archivo"
+        "archivo",
+        "extra-pack-1"
       ],
       "extensions": [
         "zip",
@@ -737,7 +739,8 @@
         "font",
         "fonts",
         "tipografia",
-        "typeface"
+        "typeface",
+        "extra-pack-1"
       ],
       "extensions": [
         "woff",
@@ -754,7 +757,8 @@
         "notebook",
         "notebooks",
         "python",
-        "ipython"
+        "ipython",
+        "extra-pack-1"
       ],
       "extensions": [
         "ipynb"
@@ -765,7 +769,8 @@
       "label": "Angular",
       "tags": [
         "framework",
-        "frontend"
+        "frontend",
+        "extra-pack-1"
       ],
       "names": [
         "angular.json",
@@ -779,7 +784,8 @@
       "tags": [
         "vue",
         "framework",
-        "frontend"
+        "frontend",
+        "extra-pack-1"
       ],
       "names": [
         "nuxt.config.ts",
@@ -795,7 +801,8 @@
         "testing",
         "test",
         "pruebas",
-        "vite"
+        "vite",
+        "extra-pack-1"
       ],
       "names": [
         "vitest.config.ts",
@@ -814,7 +821,8 @@
         "test",
         "pruebas",
         "e2e",
-        "browser"
+        "browser",
+        "extra-pack-1"
       ],
       "names": [
         "playwright.config.ts",
@@ -832,7 +840,8 @@
         "k8s",
         "kube",
         "containers",
-        "contenedores"
+        "contenedores",
+        "extra-pack-1"
       ],
       "names": [
         "kubernetes.yaml",
@@ -852,7 +861,8 @@
         "iac",
         "infrastructure",
         "infraestructura",
-        "hashicorp"
+        "hashicorp",
+        "extra-pack-1"
       ],
       "extensions": [
         "tf",

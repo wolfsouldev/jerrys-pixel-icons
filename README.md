@@ -137,6 +137,11 @@ closed and expanded folders. Automated checks do not replace this rendering chec
 <!-- LICENSE -->
 ## Icon Gallery
 
+The additional pixel-art pack includes PDF, archives, fonts, Jupyter Notebook,
+Angular, Nuxt, Vitest, Playwright, Kubernetes and Terraform. Search **`extra-pack-1`**
+in the gallery to see all ten together. See [ICON_NOTICES.txt](ICON_NOTICES.txt)
+for artwork credits and license exceptions.
+
 Explore the collection locally, with search, file/folder filters, open-folder
 previews, light/dark backgrounds, association details and original SVG downloads:
 

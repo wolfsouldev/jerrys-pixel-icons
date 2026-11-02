@@ -22,6 +22,12 @@ Para otro puerto: `pnpm run gallery:build` y luego
 
 ## Qué incluye
 
+El primer paquete adicional contiene PDF, comprimidos, fuentes, Jupyter Notebook,
+Angular, Nuxt, Vitest, Playwright, Kubernetes y Terraform. Busca **`extra-pack-1`**
+para ver los diez juntos. Son SVG nativos con cuadrícula lógica de 16 × 16.
+Los créditos y excepciones de licencia se conservan en `ICON_NOTICES.txt`, accesible
+desde el pie de la galería y también incluido en el paquete VSIX.
+
 - Búsqueda por nombre, ID, palabras clave, nombres exactos y extensiones; no distingue
   mayúsculas ni acentos. Varios términos se combinan con AND.
 - Filtros de archivos/carpetas, orden por nombre o número de asociaciones y vista

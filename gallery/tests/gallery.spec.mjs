@@ -134,6 +134,8 @@ test('captures light, dark and collection previews', async ({ page }, testInfo) 
 
 test('the extra pack is searchable, displays original SVGs and exposes its credits', async ({ page }) => {
     await page.goto('/');
+    await page.getByRole('searchbox').fill('extra-pack-1');
+    await expect(page.locator('.icon-card')).toHaveCount(10);
     for (const [id, query] of [['pdf', '.pdf'], ['archive', '.zip'], ['font', '.woff2'],
         ['jupyter', '.ipynb'], ['angular', 'angular.json'], ['nuxt', 'nuxt.config.ts'],
         ['vitest', 'vitest.config.mts'], ['playwright', 'playwright.config.mjs'],
