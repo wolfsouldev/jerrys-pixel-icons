@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>PDF</title>
+  <desc>Original pixel-art document icon. Artwork: MIT, see LICENSE.</desc>
+  <path fill="#8E263B" d="M4 2h7v1h1v1h1v1h1v9h-1v1H4z"/>
+  <path fill="#CBD1DC" d="M3 1h7v1h1v1h1v1h1v9H3z"/>
+  <path fill="#FFF9EF" d="M4 2h5v3h3v7H4z"/>
+  <path fill="#EBE3DE" d="M10 2v2h2v1H9V2z"/>
+  <path fill="#AC2942" d="M2 8h12v6H2z"/>
+  <path fill="#EB4963" d="M1 7h13v6H1z"/>
+  <path fill="#FF7D87" d="M1 7h13v1H1z"/>
+  <path fill="#FFF9EF" d="M2 8h2v1H2zM2 9h1v1H2zM4 9h1v1H4zM2 10h2v1H2zM2 11h1v2H2zM6 8h2v1H6zM6 9h1v3H6zM8 9h1v3H8zM6 12h2v1H6zM10 8h3v1h-3zM10 9h1v4h-1zM11 10h2v1h-2z"/>
+</svg>

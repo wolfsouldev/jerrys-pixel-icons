@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>Nuxt</title>
+  <desc>Original pixel-art interpretation of the Nuxt mountains. Visual reference: https://nuxt.com/design-kit . See ICON_NOTICES.txt.</desc>
+  <path fill="#087A57" fill-rule="evenodd" d="M5 3h2v2h1v2h1v2h1v2h1v3H1v-3h1V9h1V7h1V5h1zM5 7v2H4v2H3v1h6v-1H8V9H7V7z"/>
+  <path fill="#00DC82" fill-rule="evenodd" d="M5 2h2v2h1v2h1v2h1v2h1v3H1v-3h1V8h1V6h1V4h1zM5 6v2H4v2H3v1h6v-1H8V8H7V6z"/>
+  <path fill="#00A96B" fill-rule="evenodd" d="M10 5h2v2h1v2h1v2h1v2H7v-2h1V9h1V7h1zM10 9v2h3v-1h-1V9z"/>
+  <path fill="#8CF2BC" d="M5 2h2v1H5zM4 4h1v2H4zM3 6h1v2H3z"/>
+</svg>

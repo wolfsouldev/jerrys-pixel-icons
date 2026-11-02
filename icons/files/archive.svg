@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>Compressed archive</title>
+  <desc>Original pixel-art archive and zipper. Artwork: MIT, see LICENSE.</desc>
+  <path fill="#9D632B" d="M4 2h7v1h1v1h1v1h1v9h-1v1H4z"/>
+  <path fill="#E9A936" d="M3 1h7v1h1v1h1v1h1v10H3z"/>
+  <path fill="#F6C45A" d="M4 2h5v3h3v8H4z"/>
+  <path fill="#FFE5A3" d="M4 2h3v1H4zM10 2v2h2v1H9V2z"/>
+  <path fill="#8B572D" d="M7 2h1v1H7zM8 3h1v1H8zM7 4h1v1H7zM8 5h1v1H8zM7 6h1v1H7zM8 7h1v1H8zM7 8h1v1H7zM8 9h1v1H8zM6 10h4v3H6z"/>
+  <path fill="#FFF0BD" d="M7 10h2v1H7zM7 12h2v1H7z"/>
+</svg>

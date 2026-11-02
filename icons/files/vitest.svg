@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>Vitest</title>
+  <desc>Original pixel-art check and lightning interpretation. Visual reference: https://vitest.dev/ . See ICON_NOTICES.txt.</desc>
+  <path fill="#3C792F" d="M1 7h2v2h2v2h2V9h2V7h2V5h2V3h2v4h-2v2h-2v2H9v2H7v2H5v-2H3v-2H1z"/>
+  <path fill="#8BC650" d="M1 7h2v2h2v2h2V9h2V7h2V5h2V3h1v3h-2v2h-2v2H8v2H6v1H5v-2H3V9H1z"/>
+  <path fill="#C79424" d="M9 2h4v1h-1v2h-1v1h2v1h-1v1h-1v1H9v1H8V8H6V6h1V4h2z"/>
+  <path fill="#FFD543" d="M9 1h4v1h-1v2h-1v1h2v1h-1v1h-1v1H9v1H8V7H6V5h1V3h2z"/>
+  <path fill="#FFF2A5" d="M9 1h3v1H9zM7 3h2v1H7zM6 5h1v1H6z"/>
+</svg>

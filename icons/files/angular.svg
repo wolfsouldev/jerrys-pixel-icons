@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>Angular</title>
+  <desc>Pixel-art adaptation of the Angular logo, Angular Team / Google, https://angular.dev/press-kit, CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ . Modified: integer pixel grid, simplified shape and flat palette. See ICON_NOTICES.txt.</desc>
+  <path fill="#A33194" fill-rule="evenodd" d="M7 2h2v2h1v2h1v2h1v2h1v2h1v3h-4v-3H6v3H2v-3h1v-2h1V8h1V6h1V4h1zM7 6v3h2V6z"/>
+  <path fill="#F33470" fill-rule="evenodd" d="M7 1h2v2h1v2h1v2h1v2h1v2h1v3h-4v-3H6v3H2v-3h1V9h1V7h1V5h1V3h1zM7 5v3h2V5z"/>
+  <path fill="#B046CF" d="M8 1h1v2H8zM9 3h1v2H9zM10 5h1v2h-1zM11 7h1v2h-1zM12 9h1v2h-1zM10 11h4v3h-4zM8 9h4v2H8z"/>
+  <path fill="#FF85AF" d="M7 1h1v2H7zM6 3h1v2H6zM5 5h1v2H5zM3 11h1v2H3z"/>
+</svg>

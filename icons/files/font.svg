@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>Font</title>
+  <desc>Original pixel-art typeface document. Letterforms are vector pixels, not embedded fonts. Artwork: MIT.</desc>
+  <path fill="#174F6A" d="M4 2h7v1h1v1h1v1h1v9h-1v1H4z"/>
+  <path fill="#287E9D" d="M3 1h7v1h1v1h1v1h1v10H3z"/>
+  <path fill="#48B1C5" d="M4 2h5v3h3v8H4z"/>
+  <path fill="#BDE8E6" d="M10 2v2h2v1H9V2zM4 2h3v1H4z"/>
+  <path fill="#FFFBEA" d="M5 5h1v1H5zM4 6h1v2H4zM6 6h1v2H6zM4 8h3v1H4zM4 9h1v3H4zM6 9h1v3H6zM8 7h2v1H8zM10 8h1v4h-1zM8 9h2v1H8zM8 10h1v1H8zM8 11h3v1H8z"/>
+</svg>

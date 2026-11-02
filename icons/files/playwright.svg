@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <title>Playwright</title>
+  <desc>Original pixel-art theatrical masks. Visual reference: https://playwright.dev/ . See ICON_NOTICES.txt.</desc>
+  <path fill="#A63B49" d="M1 4h7v1h1v6H8v2H6v1H4v-1H2v-2H1z"/>
+  <path fill="#F16C78" d="M2 5h6v6H7v1H4v-1H3v-1H2z"/>
+  <path fill="#FFABB1" d="M2 5h5v1H2z"/>
+  <path fill="#742B3F" d="M3 7h1v1H3zM6 7h1v1H6zM4 9h2v1H4zM3 10h1v1H3zM6 10h1v1H6z"/>
+  <path fill="#276B45" d="M8 2h6v1h1v6h-1v2h-2v1h-2v-1H8V9H7V3h1z"/>
+  <path fill="#49BD70" d="M8 3h6v6h-1v1h-3V9H9V8H8z"/>
+  <path fill="#A0E99C" d="M9 3h4v1H9z"/>
+  <path fill="#23533F" d="M9 5h1v1H9zM12 5h1v1h-1zM9 7h1v1H9zM12 7h1v1h-1zM10 8h2v1h-2z"/>
+</svg>
