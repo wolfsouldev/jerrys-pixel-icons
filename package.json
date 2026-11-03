@@ -33,12 +33,14 @@
     "pretest": "pnpm run lint && pnpm run validate",
     "test": "node --test scripts/*.test.mjs",
     "vscode:prepublish": "pnpm test",
-    "package": "vsce package --no-dependencies && pnpm run package:check",
+    "package": "vsce package --no-dependencies --githubBranch master && pnpm run package:check",
     "package:check": "node scripts/check-package.mjs",
     "gallery:build": "node scripts/build-gallery.mjs",
     "gallery:preview": "pnpm run gallery:build && node scripts/serve-gallery.mjs",
     "gallery:verify": "node scripts/check-live-gallery.mjs",
-    "test:gallery": "playwright test --config gallery/playwright.config.mjs"
+    "test:gallery": "playwright test --config gallery/playwright.config.mjs",
+    "release:prepare": "node scripts/prepare-release.mjs",
+    "release:verify": "node scripts/verify-marketplace.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",
@@ -49,7 +51,7 @@
     "@typescript-eslint/parser": "^8.45.0",
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
-    "@vscode/vsce": "^3.7.0",
+    "@vscode/vsce": "4.1.0",
     "eslint": "^9.36.0",
     "fast-xml-parser": "^5.11.2",
     "typescript": "^5.9.3",

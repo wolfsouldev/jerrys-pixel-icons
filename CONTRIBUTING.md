@@ -198,8 +198,9 @@ permisos de escritura de Pages y OIDC, dentro del entorno protegido `github-page
 Después se verifican por HTTP los archivos públicos contra el commit desplegado.
 Consulta [la guía de publicación](gallery/README.md#publicar-con-github-pages).
 
-No se usan credenciales de Marketplace y **no se publica la extensión ni se crean
-releases**. Las acciones están fijadas a commits: revisa su código y conserva una
+El CI de validación no publica la extensión. Para incrementar su versión y
+publicarla con revisión y OIDC, usa los workflows manuales descritos en
+[RELEASE.md](RELEASE.md). No se crean GitHub Releases. Las acciones están fijadas a commits: revisa su código y conserva una
 referencia de versión al actualizarlas. Un workflow preparado o un deploy exitoso
 no prueban por sí solos que la página pública esté funcionando.
 

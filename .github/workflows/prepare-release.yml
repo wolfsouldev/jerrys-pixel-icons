@@ -1,0 +1,56 @@
+name: Prepare extension release
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Version increment (patch fixes, minor new icons, major breaking changes)
+        required: true
+        default: minor
+        type: choice
+        options: [patch, minor, major]
+permissions:
+  contents: read
+concurrency:
+  group: prepare-extension-release
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+        with:
+          run_install: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Increment version and move unreleased notes
+        env:
+          BUMP: ${{ inputs.bump }}
+        run: |
+          pnpm run release:prepare "$BUMP"
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+      - run: pnpm run package
+      - name: Create a reviewable version pull request (never publish here)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "release/v$VERSION"
+          git add package.json CHANGELOG.md
+          git commit -m "chore: prepare v$VERSION"
+          gh auth setup-git
+          git push "https://github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/release/v$VERSION"
+          gh pr create --base master --head "release/v$VERSION" --title "Release v$VERSION" --body 'Review version and release notes. This PR does not publish to Marketplace. After merge, run Publish extension manually on master with this exact version.'

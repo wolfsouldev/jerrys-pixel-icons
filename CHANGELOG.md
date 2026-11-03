@@ -16,6 +16,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Added
 
+- Manual release preparation with automatic version increments and reviewable PRs.
+- Approval-gated Marketplace publishing of tested VSIX artifacts using OIDC,
+  followed by public package hash verification.
+
 - Refreshed existing file and folder pixel artwork from the `add` branch.
 - Exact `go.mod` and `go.sum` associations maintained in the canonical catalog.
 
