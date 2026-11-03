@@ -1,3 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" xml:space="preserve" version="1.1" viewBox="0 0 256 256">
-  <image width="256" height="256" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAADRElEQVR4nO3coU1EURBAUT5ZFA6PxGNJkFALFSBoAGqgFiSCInDgtwHE0gFiH8mIe47/yUx+cvPUbHfPX4cTxrw9XW7TM9B1Oj0AMEcAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIGw3PUDd/cu3ewwcbfWehBcAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhC3fA7i+Pf+POYAjPL7vl+5JeAFAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABA2G56gGkPNxfTIyx5/dgvfW//9v5eABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABC2TQ8w7fPncJieYcXV2bb0D+3f3t8LAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/vALTtwiXnp+gfgAAAAASUVORK5CYII="/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="6" height="2" fill="#4D9BE6" />
+<rect x="6" y="1" width="9" height="1" fill="#4D9BE6" />
+<rect x="0" y="2" width="1" height="11" fill="#4D9BE6" />
+<rect x="1" y="2" width="15" height="2" fill="#8FD3FF" />
+<rect x="1" y="4" width="3" height="9" fill="#8FD3FF" />
+<rect x="4" y="4" width="3" height="10" fill="#FFFFFF" />
+<rect x="7" y="4" width="1" height="9" fill="#8FD3FF" />
+<rect x="8" y="4" width="3" height="10" fill="#FFFFFF" />
+<rect x="11" y="4" width="1" height="9" fill="#8FD3FF" />
+<rect x="12" y="4" width="3" height="10" fill="#FFFFFF" />
+<rect x="15" y="4" width="1" height="9" fill="#8FD3FF" />
 </svg>

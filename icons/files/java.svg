@@ -1,3 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" xml:space="preserve" version="1.1" viewBox="0 0 256 256">
-  <image width="256" height="256" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAADlUlEQVR4nO3doXFbQRRAUSnjAkTUR6C5od1HSnBKiEtIHw40N0wJ4QJRB0oPeZ5Z79xzuEaP/DtL9u3xwMj7w9Nt8vv7t9fjR83yP8y/dv7VvqweAFhHACBMACBMACBMACBMACBMACBMACBMACBMACBMACBMACBMACBMACBMACAsfRf6cNj/Prn52/f5p5wAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIMzb6kO7v29v/rXzr+YEAGECAGECAGECAGECAGECAGECAGECAGECAGECAGECAGECAGECAGECAGECAAAAAAAAAAAAAAAAAAAAAACfyPZvo59frqP34WHi8nza+huyEQjCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADC7lYPMPb3z+oJYFtOABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABC2/z4AWOj8cr2t/P/L8+k4+b0TAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAITZBwAD0/v45++/R/sEpvsInAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgzD4AWOjy4+vSfQJOABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABAmABBmHwAsNL3PP90n4AQAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYQIAYfYBwMDp26+l9/mnnAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgzD4AGLj+fFx6n3/KCQDCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCBADCtr7L/BGm77uzt93v8085AUCYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAAAAAAAAAAAAAAAAAAAAAADAJ7L92+jvD0+31TPQdf/2uvU3ZCMQhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhP0D1zxLmCClkSsAAAAASUVORK5CYII="/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="5" y="0" width="1" height="1" fill="#EA4F36" />
+<rect x="8" y="0" width="1" height="1" fill="#EA4F36" />
+<rect x="11" y="0" width="1" height="1" fill="#EA4F36" />
+<rect x="4" y="1" width="1" height="2" fill="#EA4F36" />
+<rect x="7" y="1" width="1" height="2" fill="#EA4F36" />
+<rect x="10" y="1" width="1" height="2" fill="#EA4F36" />
+<rect x="5" y="3" width="1" height="1" fill="#EA4F36" />
+<rect x="8" y="3" width="1" height="1" fill="#EA4F36" />
+<rect x="11" y="3" width="1" height="1" fill="#EA4F36" />
+<rect x="3" y="5" width="10" height="1" fill="#8FD3FF" />
+<rect x="3" y="6" width="1" height="7" fill="#4D9BE6" />
+<rect x="4" y="6" width="1" height="1" fill="#8FD3FF" />
+<rect x="5" y="6" width="8" height="7" fill="#4D9BE6" />
+<rect x="4" y="7" width="1" height="1" fill="#4D9BE6" />
+<rect x="13" y="7" width="2" height="1" fill="#8FD3FF" />
+<rect x="4" y="8" width="1" height="3" fill="#8FD3FF" />
+<rect x="14" y="8" width="1" height="1" fill="#4D9BE6" />
+<rect x="15" y="8" width="1" height="1" fill="#8FD3FF" />
+<rect x="15" y="9" width="1" height="1" fill="#4D9BE6" />
+<rect x="14" y="10" width="1" height="1" fill="#4D9BE6" />
+<rect x="4" y="11" width="1" height="2" fill="#4D9BE6" />
+<rect x="13" y="11" width="1" height="1" fill="#4D65B4" />
+<rect x="4" y="13" width="8" height="1" fill="#4D65B4" />
+<rect x="3" y="15" width="10" height="1" fill="#EA4F36" />
 </svg>
