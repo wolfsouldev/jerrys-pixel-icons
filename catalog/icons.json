@@ -158,6 +158,10 @@
       "extensions": [
         "go"
       ],
+      "names": [
+        "go.mod",
+        "go.sum"
+      ],
       "label": "Go",
       "tags": [
         "golang"

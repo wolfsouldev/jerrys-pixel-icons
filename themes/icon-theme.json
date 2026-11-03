@@ -741,6 +741,8 @@
     "favicon.ico": "favicon",
     "favicon.png": "favicon",
     "favicon.svg": "favicon",
+    "go.mod": "go",
+    "go.sum": "go",
     "k8s.yaml": "kubernetes",
     "k8s.yml": "kubernetes",
     "kubeconfig": "kubernetes",

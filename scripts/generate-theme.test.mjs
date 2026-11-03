@@ -9,6 +9,13 @@ import { buildTheme, serializeTheme } from './generate-theme.mjs';
 import { projectRoot } from './validate-theme.mjs';
 
 const sourceCatalog = JSON.parse(readFileSync(resolve(projectRoot, 'catalog/icons.json'), 'utf8'));
+test('Go module files use the Go icon without replacing generic extensions', () => {
+    const theme = buildTheme(sourceCatalog);
+    assert.equal(theme.fileNames['go.mod'], 'go');
+    assert.equal(theme.fileNames['go.sum'], 'go');
+    assert.equal(theme.fileExtensions.go, 'go');
+    assert.equal(theme.fileExtensions.json, 'json');
+});
 const minimalCatalog = () => ({ version: 1, defaults: { file: 'file', folder: 'folder' },
     files: [{ id: 'file', extensions: ['ts', 'js'], names: ['README.md'] }],
     folders: [{ id: 'folder', names: ['src', 'source'] }] });

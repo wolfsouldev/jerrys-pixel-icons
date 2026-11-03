@@ -16,6 +16,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Added
 
+- Refreshed existing file and folder pixel artwork from the `add` branch.
+- Exact `go.mod` and `go.sum` associations maintained in the canonical catalog.
+
 - Ten native pixel-art SVGs: PDF, compressed archives, fonts, Jupyter Notebook,
   Angular, Nuxt, Vitest, Playwright, Kubernetes and Terraform.
 - Specific file/extension associations for the new pack, preserving generic

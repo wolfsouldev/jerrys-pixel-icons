@@ -1,3 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" xml:space="preserve" version="1.1" viewBox="0 0 256 256">
-  <image width="256" height="256" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAEM0lEQVR4nO3cMU4sVxBAUcbqhJAJ5mtCZEJWQOBdILFEJO+CgBU4BDlmAqeTIPEX8SyVWvec/HVX0leV9DvcLPr3rz9/Vp9R9ut0mh6BQV+Xy9L5+7fPw8r5P5beDuyaAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAECYAEDY4f3xuPQ///l493/NwgD3Eezb6n0CNgAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAIEwAI26YHWLW9fkyPsGu35+kJ9u36/DQ9whIbAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIQJAIRt0wPs3ffLw/QIS66n0/QIDLIBQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQNg2PcDeba8f0yMsuT1PT7Bv1+en6RGW2AAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgbJseYNX3y8P0CLt2PZ2mR1hy+/f79Ai7ZgOAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAMAGAsO3pn/8OKw94f7z5WTl/Pt6tHL/ZXj+Wzq9yHwErvi6XpfP3b59L368NAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMIEAMK26QH2bvo+glW35+kJmGQDgDABgDABgDABgDABgDABgDABgDABgDABgDABgDABgDABgDABgDABgDABgLDd3wfw/fKwdH7v//Oz5vr8ND3CKBsAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhAkAhO3+PoBVq/cJ7N31dJoegUE2AAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAgTAAg7TA/w/nj8mXz/+Xg3+fpxv+L3AXxdLqPvv3/7HP0GbQAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQJgAQNn4fwLTp+whW1e8zWDX9P/40GwCECQCECQCECQCECQCECQCECQCECQCECQCECQCECQCECQCECQCECQCECQCE/QaRPjrP37J1iQAAAABJRU5ErkJggg=="/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="1" y="0" width="5" height="3" fill="#B33831" />
+<rect x="6" y="0" width="8" height="1" fill="#EA4F36" />
+<rect x="14" y="0" width="1" height="1" fill="#B33831" />
+<rect x="0" y="1" width="1" height="9" fill="#6E2727" />
+<rect x="6" y="1" width="2" height="2" fill="#B33831" />
+<rect x="8" y="1" width="7" height="2" fill="#EA4F36" />
+<rect x="15" y="1" width="1" height="9" fill="#B33831" />
+<rect x="1" y="3" width="2" height="7" fill="#B33831" />
+<rect x="3" y="3" width="5" height="2" fill="#C7DCD0" />
+<rect x="8" y="3" width="5" height="2" fill="#FFFFFF" />
+<rect x="13" y="3" width="2" height="7" fill="#EA4F36" />
+<rect x="3" y="5" width="2" height="4" fill="#C7DCD0" />
+<rect x="5" y="5" width="3" height="2" fill="#B33831" />
+<rect x="8" y="5" width="5" height="2" fill="#EA4F36" />
+<rect x="5" y="7" width="3" height="2" fill="#C7DCD0" />
+<rect x="8" y="7" width="5" height="2" fill="#FFFFFF" />
+<rect x="3" y="9" width="5" height="1" fill="#B33831" />
+<rect x="8" y="9" width="3" height="2" fill="#EA4F36" />
+<rect x="11" y="9" width="2" height="3" fill="#FFFFFF" />
+<rect x="1" y="10" width="1" height="4" fill="#6E2727" />
+<rect x="2" y="10" width="1" height="4" fill="#B33831" />
+<rect x="3" y="10" width="2" height="2" fill="#C7DCD0" />
+<rect x="5" y="10" width="3" height="1" fill="#B33831" />
+<rect x="13" y="10" width="1" height="4" fill="#EA4F36" />
+<rect x="14" y="10" width="1" height="4" fill="#B33831" />
+<rect x="5" y="11" width="3" height="2" fill="#C7DCD0" />
+<rect x="8" y="11" width="3" height="2" fill="#FFFFFF" />
+<rect x="3" y="12" width="1" height="2" fill="#B33831" />
+<rect x="4" y="12" width="1" height="1" fill="#C7DCD0" />
+<rect x="11" y="12" width="1" height="1" fill="#FFFFFF" />
+<rect x="12" y="12" width="1" height="2" fill="#EA4F36" />
+<rect x="4" y="13" width="4" height="2" fill="#B33831" />
+<rect x="8" y="13" width="4" height="2" fill="#EA4F36" />
+<rect x="2" y="14" width="2" height="1" fill="#6E2727" />
+<rect x="12" y="14" width="2" height="1" fill="#B33831" />
+<rect x="4" y="15" width="3" height="1" fill="#6E2727" />
+<rect x="7" y="15" width="5" height="1" fill="#B33831" />
 </svg>
