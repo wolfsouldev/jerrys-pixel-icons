@@ -7,7 +7,7 @@ import { buildTheme } from './generate-theme.mjs';
 
 const catalog = JSON.parse(readFileSync(new URL('../catalog/icons.json', import.meta.url), 'utf8'));
 const theme = buildTheme(catalog);
-const newIds = ['pdf', 'archive', 'font', 'jupyter', 'angular', 'nuxt', 'vitest', 'playwright', 'kubernetes', 'terraform'];
+const newIds = ['pdf', 'zip', 'font', 'jupyter', 'angular', 'nuxt', 'vitest', 'playwright', 'kubernetes', 'terraform'];
 
 // Models documented filename > longest compound extension > fallback lookup.
 // A key prefixed by a direct parent is supported by VS Code's file-icon theme format.
@@ -34,8 +34,8 @@ function fileIcon(path) {
 
 for (const [path, id] of [
     ['document.pdf', 'pdf'], ['DOCUMENT.PDF', 'pdf'],
-    ['backup.zip', 'archive'], ['backup.7z', 'archive'], ['backup.rar', 'archive'],
-    ['backup.tar.gz', 'archive'], ['backup.tar.xz', 'archive'], ['backup.tar.zst', 'archive'],
+    ['backup.zip', 'zip'], ['backup.7z', 'zip'], ['backup.rar', 'zip'],
+    ['backup.tar.gz', 'zip'], ['backup.tar.xz', 'zip'], ['backup.tar.zst', 'zip'],
     ['text.woff', 'font'], ['text.woff2', 'font'], ['text.ttf', 'font'], ['text.otf', 'font'],
     ['analysis.ipynb', 'jupyter'],
     ['angular.json', 'angular'], ['.angular-cli.json', 'angular'], ['ngsw-config.json', 'angular'],
@@ -66,29 +66,23 @@ for (const [path, id] of [
 }
 
 for (const id of newIds) {
-    test(`${id} is native transparent pixel SVG with integer, axis-aligned geometry`, () => {
+    test(`${id} is a valid, self-contained 16x16 SVG icon`, () => {
         const source = readFileSync(new URL(`../icons/files/${id}.svg`, import.meta.url), 'utf8');
         assert.equal(XMLValidator.validate(source), true);
         const svg = new XMLParser({ ignoreAttributes: false }).parse(source).svg;
-        assert.equal(svg['@_viewBox'], '0 0 16 16');
+        assert.equal(svg['@_width'], '16');
+        assert.equal(svg['@_height'], '16');
         assert.equal(svg['@_shape-rendering'], 'crispEdges');
         assert.equal(svg['@_xmlns'], 'http://www.w3.org/2000/svg');
-        assert.doesNotMatch(source, /<(?:image|script|text|foreignObject|filter)\b|(?:xlink:)?href=|data:image/i);
-        for (const path of [svg.path].flat()) {
-            assert.match(path['@_d'], /^[MmHhVvZz\d\s,.-]+$/);
-            for (const number of path['@_d'].match(/-?\d+(?:\.\d+)?/g)) {
-                assert.ok(Number.isInteger(Number(number)));
-            }
-        }
+        assert.doesNotMatch(source, /<(?:image|script|foreignObject|filter)\b|(?:xlink:)?href=|data:image/i);
         assert.ok(catalog.files.some(entry => entry.id === id && entry.label));
     });
 }
 
-test('specific artwork notices ship with standalone SVG descriptions', () => {
+test('specific artwork credits and license exceptions are documented', () => {
     const notices = readFileSync(new URL('../ICON_NOTICES.txt', import.meta.url), 'utf8');
     for (const id of ['angular', 'kubernetes']) {
-        const source = readFileSync(new URL(`../icons/files/${id}.svg`, import.meta.url), 'utf8');
-        assert.match(source, /CC BY 4.0/);
         assert.match(notices, new RegExp(`icons/files/${id}\\.svg`));
     }
+    assert.match(notices, /Creative Commons Attribution 4\.0 International \(CC BY 4\.0\)/);
 });

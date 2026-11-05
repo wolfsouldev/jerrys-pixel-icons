@@ -27,9 +27,9 @@ icons/files/kubernetes.svg
 
 OTHER NEW DRAWINGS AND VISUAL REFERENCES
 
-The new pdf, archive, font, jupyter, nuxt, vitest, playwright and terraform SVG
+The new pdf, zip, font, jupyter, nuxt, vitest, playwright and terraform SVG
 drawings are contributed under the project's MIT license (see LICENSE).
-PDF, archive and font use original document/zipper/letterform illustrations, not
+PDF, ZIP and font use original document/zipper/letterform illustrations, not
 third-party application logos. The Jupyter icon uses an original orange notebook
 and code cell, not a modified Jupyter orbit logo.
 

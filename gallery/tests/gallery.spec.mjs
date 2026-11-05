@@ -136,7 +136,7 @@ test('the extra pack is searchable, displays original SVGs and exposes its credi
     await page.goto('/');
     await page.getByRole('searchbox').fill('extra-pack-1');
     await expect(page.locator('.icon-card')).toHaveCount(10);
-    for (const [id, query] of [['pdf', '.pdf'], ['archive', '.zip'], ['font', '.woff2'],
+    for (const [id, query] of [['pdf', '.pdf'], ['zip', '.zip'], ['font', '.woff2'],
         ['jupyter', '.ipynb'], ['angular', 'angular.json'], ['nuxt', 'nuxt.config.ts'],
         ['vitest', 'vitest.config.mts'], ['playwright', 'playwright.config.mjs'],
         ['kubernetes', 'k8s.yaml'], ['terraform', '.tf.json']]) {
