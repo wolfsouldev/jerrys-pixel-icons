@@ -3,7 +3,7 @@
   "displayName": "Jerry's Pixel Icons",
   "description": "Un tema de iconos pixel art personalizado para VS Code",
   "publisher": "MelissaGutierrez",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "packageManager": "pnpm@12.15.0",
   "repository": {
     "type": "git",
