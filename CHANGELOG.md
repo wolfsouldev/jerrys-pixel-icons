@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+### Changed
+
+- Use a live Visual Studio Marketplace version badge in the README.
+
 ## [0.4.0] - 2026-11-05
 
 ### Fixed
