@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { parseDocument } from 'yaml';
+import { detectReleaseVersion } from './detect-release.mjs';
 import { nextVersion, prepareRelease } from './prepare-release.mjs';
 
 test('stable versions increment explicitly without prerelease ambiguity', () => {
@@ -37,35 +38,57 @@ function workflow(name) {
     return doc.toJS();
 }
 
-test('release workflows are manual and master-only with pinned actions', () => {
-    for (const name of ['prepare-release', 'publish']) {
-        const config = workflow(name);
-        assert.deepEqual(Object.keys(config.on), ['workflow_dispatch']);
-        assert.deepEqual(config.permissions, { contents: 'read' });
-        assert.equal(config.concurrency['cancel-in-progress'], false);
-        for (const [id, job] of Object.entries(config.jobs)) {
-            assert.equal(job.if, "github.ref == 'refs/heads/master'");
+test('release preparation is manual; publishing detects version changes on master', () => {
+    const prepare = workflow('prepare-release');
+    const publish = workflow('publish');
+    assert.deepEqual(Object.keys(prepare.on), ['workflow_dispatch']);
+    assert.deepEqual(Object.keys(publish.on), ['push', 'workflow_dispatch']);
+    assert.deepEqual(publish.on.push.branches, ['master']);
+    assert.deepEqual(prepare.permissions, { contents: 'read' });
+    assert.deepEqual(publish.permissions, { contents: 'read' });
+    assert.equal(prepare.concurrency['cancel-in-progress'], false);
+    assert.equal(publish.concurrency['cancel-in-progress'], false);
+    assert.equal(prepare.jobs.prepare.if, "github.ref == 'refs/heads/master'");
+    assert.equal(publish.jobs['detect-release'].if, "github.ref == 'refs/heads/master'");
+    assert.equal(publish.jobs.validate.needs, 'detect-release');
+    assert.equal(publish.jobs.validate.if, "needs.detect-release.outputs.version != ''");
+    assert.equal(publish.jobs.publish.if, "needs.detect-release.outputs.version != ''");
+    for (const config of [prepare, publish]) {
+        for (const job of Object.values(config.jobs)) {
             for (const step of job.steps) {
                 if (step.uses) { assert.match(step.uses, /^[\w-]+\/[\w-]+@[a-f0-9]{40}$/); }
                 if (step.uses?.startsWith('actions/checkout@')) { assert.equal(step.with['persist-credentials'], false); }
+                if (step.uses?.startsWith('actions/checkout@') && step.with['fetch-depth'] !== undefined) {
+                    assert.equal(step.with['fetch-depth'], 0);
+                }
             }
-            if (name === 'publish' && id !== 'publish') { assert.notEqual(job.permissions?.['id-token'], 'write'); }
         }
     }
 });
 
 test('publishing uses an approved, verified artifact and no long-lived secret', () => {
     const { jobs } = workflow('publish');
-    assert.equal(jobs.publish.needs, 'validate');
+    assert.deepEqual(jobs.publish.needs, ['detect-release', 'validate']);
     assert.equal(jobs.publish.environment.name, 'marketplace');
     assert.deepEqual(jobs.publish.permissions, { contents: 'read', 'id-token': 'write' });
     const commands = jobs.publish.steps.map(step => step.run).filter(Boolean);
     assert.ok(commands.indexOf('pnpm run package:check') < commands.findIndex(cmd => cmd.includes('vsce publish')));
-    assert.ok(commands.some(cmd => cmd.includes('--oidc --packagePath')));
+    assert.ok(commands.some(cmd => cmd.includes('--oidc --skip-duplicate --packagePath')));
     assert.equal(commands.at(-1), 'pnpm run release:verify');
-    assert.doesNotMatch(JSON.stringify(jobs.publish), /secrets\.|--skip-duplicate|vsce publish (minor|patch|major)/);
+    assert.doesNotMatch(JSON.stringify(jobs.publish), /secrets\.|vsce publish (minor|patch|major)/);
     assert.ok(jobs.validate.steps.some(step => step.run === 'pnpm run test:gallery'));
     assert.ok(jobs.publish.steps.some(step => step.uses?.startsWith('actions/download-artifact@')));
+});
+
+test('only a strictly higher manifest version with dated notes triggers automatic publish', () => {
+    const changelog = '# Changes\n\n## [Unreleased]\n\n## [0.4.0] - 2026-11-05\n\n- New icons.\n';
+    const release = { eventName: 'push', beforeVersion: '0.3.0', currentVersion: '0.4.0', changelog };
+    assert.equal(detectReleaseVersion(release), '0.4.0');
+    assert.equal(detectReleaseVersion({ ...release, currentVersion: '0.3.0', beforeVersion: '0.3.0' }), '');
+    assert.throws(() => detectReleaseVersion({ ...release, currentVersion: '0.2.9' }), /must be greater/);
+    assert.throws(() => detectReleaseVersion({ ...release, changelog: '# Changes' }), /dated release notes/);
+    assert.equal(detectReleaseVersion({ ...release, eventName: 'workflow_dispatch', requestedVersion: '0.4.0' }), '0.4.0');
+    assert.throws(() => detectReleaseVersion({ ...release, eventName: 'workflow_dispatch', requestedVersion: '0.5.0' }), /does not match/);
 });
 
 test('public verification retries processing delays but rejects different package bytes', async () => {

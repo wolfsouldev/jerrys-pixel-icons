@@ -1,8 +1,11 @@
 # Publicar una versión de Jerry's Pixel Icons
 
-La web y la extensión se publican por separado. El CI existente despliega la web
-al subir cambios probados a `master`; no cambia versiones ni publica extensiones.
-Los dos workflows de release son manuales y solo aceptan `master`.
+La web y la extensión se publican por separado. El CI despliega la web al subir
+cambios probados a `master`. El workflow **Publish extension** también escucha
+esos pushes, pero solo empaqueta y publica cuando `package.json.version` subió
+respecto al commit anterior y el changelog tiene notas fechadas para esa versión.
+Los demás commits no publican en Marketplace. `Prepare extension release` sigue
+siendo manual y abre un PR revisable para cada versión.
 
 ## Configuración inicial (una sola vez)
 
@@ -38,11 +41,12 @@ La sesión de GitHub no concede por sí sola acceso al publisher de Microsoft.
    `major` para cambios incompatibles. Desde 0.3.0, `minor` prepara **0.4.0**.
 3. El workflow actualiza automáticamente `package.json`, mueve las notas a una
    sección fechada, prueba el paquete y abre un PR `release/vX.Y.Z`.
-4. Revisa el PR y su aspecto en VS Code. Los PRs creados con `GITHUB_TOKEN` no
-   disparan automáticamente otros workflows: ejecuta **Validate and package**
-   manualmente sobre la rama `release/vX.Y.Z` antes de hacer merge. Ese workflow
-   incluye las matrices Node 22/24 y los navegadores, sin desplegar esa rama.
-5. Haz merge del PR en `master`. Crear o fusionar el PR NO publica la extensión.
+4. Revisa el PR, las notas y el aspecto en VS Code. El PR no publica.
+5. Haz merge del PR en `master`. Ese cambio de versión dispara automáticamente
+   las pruebas Node 22/24, empaquetado, verificaciones y pruebas de navegador.
+   Tras superarlas, el environment `marketplace` solicita la aprobación
+   configurada; después publica el mismo VSIX probado con OIDC y verifica que
+   los bytes públicos coinciden.
 
 Alternativa local (árbol de trabajo limpio): `pnpm run release:prepare minor`,
 revisar el diff, ejecutar las pruebas y abrir un PR con los dos archivos cambiados.
@@ -50,21 +54,19 @@ Este comando no hace commits, tags, push ni publicación.
 Si ya existe la rama/PR de la versión, revísala y reutilízala; no ejecutes otro
 incremento por un error al crear el PR ni hagas force-push.
 
-## Publicar
+## Reintentar manualmente
 
-1. En **Actions → Publish extension → Run workflow**, selecciona `master` e
-   introduce la versión exacta revisada, por ejemplo `0.4.0`.
-2. Se comprueban identidad, versión y notas; se ejecutan pruebas, empaquetado y
-   pruebas de navegador. El VSIX comprobado se conserva como artefacto.
-3. El environment `marketplace` espera aprobación del mantenedor configurado.
-4. Tras aprobar, se descarga y verifica **ese mismo VSIX** y se publica usando
-   OIDC. No se vuelve a empaquetar ni se incrementa la versión durante el publish.
-5. Se descarga el paquete público de esa versión y se verifica su SHA-256 contra
-   el artefacto probado. El job solo termina correctamente si coinciden.
+Si el workflow automático falló, revisa primero el error. En **Actions → Publish
+extension → Run workflow**, selecciona `master` e introduce la versión exacta ya
+revisada. El flujo valida identidad/notas, vuelve a probar y empaquetar, y usa
+`--skip-duplicate` para poder recuperar un timeout tras una publicación aceptada.
+La comprobación SHA-256 falla si Marketplace contiene bytes distintos; en ese caso
+no trates de sobrescribir esa versión: revisa Marketplace antes de preparar otra.
+El environment `marketplace` mantiene la aprobación requerida también en el
+reintento. No se vuelve a incrementar la versión durante esta operación.
 
 Si Microsoft tarda en procesar el paquete y falla la verificación, revisa primero
 el estado en Marketplace. No aumentes otra vez la versión ni republiques a ciegas.
 Descarga el artefacto de esa ejecución y ejecuta `pnpm run release:verify` desde
-el mismo commit para repetir únicamente la comprobación pública. Una versión
-publicada no puede sobrescribirse; las correcciones requieren otra versión.
-Estos workflows no crean tags ni GitHub Releases y nunca despublican versiones.
+el mismo commit para repetir únicamente la comprobación pública. Estos workflows
+no crean tags ni GitHub Releases y nunca despublican versiones.

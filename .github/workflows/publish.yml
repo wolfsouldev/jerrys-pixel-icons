@@ -1,9 +1,11 @@
 name: Publish extension
 on:
+  push:
+    branches: [master]
   workflow_dispatch:
     inputs:
       version:
-        description: Exact reviewed version from package.json (e.g. 0.4.0)
+        description: Exact reviewed version from package.json (for retry/manual publish)
         required: true
         type: string
 permissions:
@@ -12,8 +14,27 @@ concurrency:
   group: marketplace-release
   cancel-in-progress: false
 jobs:
-  validate:
+  detect-release:
     if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Detect a reviewed package version change
+        id: release
+        env:
+          RELEASE_EVENT_NAME: ${{ github.event_name }}
+          RELEASE_BEFORE_SHA: ${{ github.event.before }}
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: node scripts/detect-release.mjs
+  validate:
+    needs: detect-release
+    if: needs.detect-release.outputs.version != ''
     runs-on: ubuntu-latest
     timeout-minutes: 20
     strategy:
@@ -35,7 +56,7 @@ jobs:
       - run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Require the exact reviewed version and changelog
         env:
-          EXPECTED_VERSION: ${{ inputs.version }}
+          EXPECTED_VERSION: ${{ needs.detect-release.outputs.version }}
         run: |
           node --input-type=module <<'NODE'
           import { readFileSync } from 'node:fs';
@@ -55,12 +76,12 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: marketplace-vsix
-          path: jerrys-pixel-icons-${{ inputs.version }}.vsix
+          path: jerrys-pixel-icons-${{ needs.detect-release.outputs.version }}.vsix
           if-no-files-found: error
           retention-days: 7
   publish:
-    needs: validate
-    if: github.ref == 'refs/heads/master'
+    needs: [detect-release, validate]
+    if: needs.detect-release.outputs.version != ''
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
@@ -90,7 +111,7 @@ jobs:
         run: pnpm run package:check
       - name: Publish exact tested VSIX using Trusted Publishing
         env:
-          RELEASE_VERSION: ${{ inputs.version }}
-        run: pnpm exec vsce publish --oidc --packagePath "jerrys-pixel-icons-$RELEASE_VERSION.vsix"
+          RELEASE_VERSION: ${{ needs.detect-release.outputs.version }}
+        run: pnpm exec vsce publish --oidc --skip-duplicate --packagePath "jerrys-pixel-icons-$RELEASE_VERSION.vsix"
       - name: Verify the public Marketplace package matches the tested bytes
         run: pnpm run release:verify

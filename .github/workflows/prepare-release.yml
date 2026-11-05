@@ -53,4 +53,4 @@ jobs:
           git commit -m "chore: prepare v$VERSION"
           gh auth setup-git
           git push "https://github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/release/v$VERSION"
-          gh pr create --base master --head "release/v$VERSION" --title "Release v$VERSION" --body 'Review version and release notes. This PR does not publish to Marketplace. After merge, run Publish extension manually on master with this exact version.'
+          gh pr create --base master --head "release/v$VERSION" --title "Release v$VERSION" --body 'Review version and release notes. After merge, the Publish extension workflow automatically validates and publishes the new version to Marketplace (subject to the marketplace environment approval).'

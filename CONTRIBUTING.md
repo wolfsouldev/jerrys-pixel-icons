@@ -198,14 +198,17 @@ permisos de escritura de Pages y OIDC, dentro del entorno protegido `github-page
 Después se verifican por HTTP los archivos públicos contra el commit desplegado.
 Consulta [la guía de publicación](gallery/README.md#publicar-con-github-pages).
 
-El CI de validación no publica la extensión. Para incrementar su versión y
-publicarla con revisión y OIDC, usa los workflows manuales descritos en
-[RELEASE.md](RELEASE.md). No se crean GitHub Releases. Las acciones están fijadas a commits: revisa su código y conserva una
-referencia de versión al actualizarlas. Un workflow preparado o un deploy exitoso
-no prueban por sí solos que la página pública esté funcionando.
+La extensión solo se publica cuando el workflow detecta un aumento de
+`package.json.version` con notas fechadas en `CHANGELOG.md` al subir a `master`.
+Los cambios normales de código/iconos no la publican. Para preparar una versión,
+revisarla y entender la aprobación de Marketplace/OIDC, consulta
+[RELEASE.md](RELEASE.md). No se crean GitHub Releases. Las acciones están fijadas
+a commits: revisa su código y conserva una referencia de versión al actualizarlas.
+Un workflow preparado o un deploy exitoso no prueban por sí solos que la página
+pública esté funcionando.
 
-Antes de publicar manualmente una versión, el mantenedor debe esperar los checks
-de ambas versiones de Node y completar la revisión visual. Para impedir merges
+El flujo de publicación espera los checks de ambas versiones de Node y requiere
+la aprobación configurada en el environment `marketplace`. Para impedir merges
 con fallos, configura este workflow como comprobación requerida en las reglas de
 protección de la rama; añadir el YAML por sí solo no activa esa protección.
 
