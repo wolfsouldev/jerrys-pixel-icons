@@ -709,10 +709,10 @@
       ]
     },
     {
-      "id": "archive",
+      "id": "zip",
       "label": "Comprimidos",
       "tags": [
-        "archive",
+        "zip",
         "zip",
         "7zip",
         "gzip",

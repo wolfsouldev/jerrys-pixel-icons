@@ -35,7 +35,7 @@ logo path: assets/logo.png
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Some Examples](#some-examples)
+- [Examples](#examples)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -47,7 +47,12 @@ logo path: assets/logo.png
 - [Contact](#contact)
 
 <!-- SOME EXAMPLES -->
-## Some Examples
+## Examples
+
+<details>
+    <summary>Files</summary>
+    <img src="https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/preview-files.webp" >
+</details>
 
 ![Examples][examples]
 
@@ -188,4 +193,5 @@ and VSIX. Brand names and trademarks belong to their respective owners.
 [stars-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/stargazers
 [license-shield]: https://img.shields.io/github/license/wolfsouldev/jerrys-pixel-icons.svg?style=flat-square
 [license-url]: https://github.com/wolfsouldev/jerrys-pixel-icons/blob/master/LICENSE
-[examples]: https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/example.webp
+[examples-files]: https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/preview-files.webp
+[examples-folders]: https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/preview-folders.webp

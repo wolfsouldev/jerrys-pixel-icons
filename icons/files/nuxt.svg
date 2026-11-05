@@ -1,8 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
-  <title>Nuxt</title>
-  <desc>Original pixel-art interpretation of the Nuxt mountains. Visual reference: https://nuxt.com/design-kit . See ICON_NOTICES.txt.</desc>
-  <path fill="#087A57" fill-rule="evenodd" d="M5 3h2v2h1v2h1v2h1v2h1v3H1v-3h1V9h1V7h1V5h1zM5 7v2H4v2H3v1h6v-1H8V9H7V7z"/>
-  <path fill="#00DC82" fill-rule="evenodd" d="M5 2h2v2h1v2h1v2h1v2h1v3H1v-3h1V8h1V6h1V4h1zM5 6v2H4v2H3v1h6v-1H8V8H7V6z"/>
-  <path fill="#00A96B" fill-rule="evenodd" d="M10 5h2v2h1v2h1v2h1v2H7v-2h1V9h1V7h1zM10 9v2h3v-1h-1V9z"/>
-  <path fill="#8CF2BC" d="M5 2h2v1H5zM4 4h1v2H4zM3 6h1v2H3z"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="5" y="2" width="2" height="1" fill="#CDDF6C" />
+<rect x="5" y="3" width="2" height="3" fill="#91DB69" />
+<rect x="4" y="4" width="1" height="2" fill="#CDDF6C" />
+<rect x="7" y="4" width="1" height="4" fill="#91DB69" />
+<rect x="10" y="5" width="2" height="4" fill="#1EBC73" />
+<rect x="3" y="6" width="1" height="2" fill="#CDDF6C" />
+<rect x="4" y="6" width="1" height="2" fill="#91DB69" />
+<rect x="5" y="6" width="2" height="1" fill="#239063" />
+<rect x="8" y="6" width="1" height="3" fill="#91DB69" />
+<rect x="9" y="7" width="1" height="6" fill="#1EBC73" />
+<rect x="12" y="7" width="1" height="3" fill="#1EBC73" />
+<rect x="2" y="8" width="2" height="2" fill="#91DB69" />
+<rect x="4" y="8" width="1" height="1" fill="#239063" />
+<rect x="7" y="8" width="1" height="1" fill="#239063" />
+<rect x="8" y="9" width="1" height="4" fill="#1EBC73" />
+<rect x="13" y="9" width="1" height="4" fill="#1EBC73" />
+<rect x="1" y="10" width="2" height="3" fill="#91DB69" />
+<rect x="3" y="10" width="1" height="1" fill="#239063" />
+<rect x="10" y="10" width="1" height="1" fill="#91DB69" />
+<rect x="3" y="11" width="4" height="2" fill="#91DB69" />
+<rect x="7" y="11" width="1" height="2" fill="#1EBC73" />
+<rect x="10" y="11" width="3" height="2" fill="#1EBC73" />
+<rect x="14" y="11" width="1" height="2" fill="#1EBC73" />
+<rect x="1" y="13" width="10" height="1" fill="#239063" />
 </svg>

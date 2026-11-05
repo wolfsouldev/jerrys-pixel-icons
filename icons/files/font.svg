@@ -1,9 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
-  <title>Font</title>
-  <desc>Original pixel-art typeface document. Letterforms are vector pixels, not embedded fonts. Artwork: MIT.</desc>
-  <path fill="#174F6A" d="M4 2h7v1h1v1h1v1h1v9h-1v1H4z"/>
-  <path fill="#287E9D" d="M3 1h7v1h1v1h1v1h1v10H3z"/>
-  <path fill="#48B1C5" d="M4 2h5v3h3v8H4z"/>
-  <path fill="#BDE8E6" d="M10 2v2h2v1H9V2zM4 2h3v1H4z"/>
-  <path fill="#FFFBEA" d="M5 5h1v1H5zM4 6h1v2H4zM6 6h1v2H6zM4 8h3v1H4zM4 9h1v3H4zM6 9h1v3H6zM8 7h2v1H8zM10 8h1v4h-1zM8 9h2v1H8zM8 10h1v1H8zM8 11h3v1H8z"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="3" y="0" width="8" height="1" fill="#0B8A8F" />
+<rect x="2" y="1" width="1" height="14" fill="#0B8A8F" />
+<rect x="3" y="1" width="4" height="1" fill="#8FF8E2" />
+<rect x="7" y="1" width="3" height="6" fill="#30E1B9" />
+<rect x="10" y="1" width="2" height="4" fill="#0B8A8F" />
+<rect x="3" y="2" width="2" height="1" fill="#8FF8E2" />
+<rect x="5" y="2" width="2" height="5" fill="#30E1B9" />
+<rect x="12" y="2" width="1" height="3" fill="#0B8A8F" />
+<rect x="3" y="3" width="1" height="4" fill="#8FF8E2" />
+<rect x="4" y="3" width="1" height="12" fill="#30E1B9" />
+<rect x="13" y="3" width="1" height="2" fill="#0B8A8F" />
+<rect x="14" y="4" width="1" height="11" fill="#0B8A8F" />
+<rect x="10" y="5" width="4" height="3" fill="#30E1B9" />
+<rect x="3" y="7" width="1" height="8" fill="#30E1B9" />
+<rect x="5" y="7" width="1" height="1" fill="#30E1B9" />
+<rect x="6" y="7" width="1" height="1" fill="#FFFFFF" />
+<rect x="7" y="7" width="1" height="1" fill="#0EAF9B" />
+<rect x="8" y="7" width="2" height="1" fill="#30E1B9" />
+<rect x="5" y="8" width="1" height="5" fill="#FFFFFF" />
+<rect x="6" y="8" width="1" height="1" fill="#0EAF9B" />
+<rect x="7" y="8" width="1" height="5" fill="#FFFFFF" />
+<rect x="8" y="8" width="1" height="5" fill="#0EAF9B" />
+<rect x="9" y="8" width="2" height="1" fill="#FFFFFF" />
+<rect x="11" y="8" width="1" height="1" fill="#0EAF9B" />
+<rect x="12" y="8" width="2" height="1" fill="#30E1B9" />
+<rect x="6" y="9" width="1" height="1" fill="#FFFFFF" />
+<rect x="9" y="9" width="2" height="1" fill="#30E1B9" />
+<rect x="11" y="9" width="1" height="4" fill="#FFFFFF" />
+<rect x="12" y="9" width="1" height="4" fill="#0EAF9B" />
+<rect x="13" y="9" width="1" height="6" fill="#30E1B9" />
+<rect x="6" y="10" width="1" height="3" fill="#0EAF9B" />
+<rect x="9" y="10" width="2" height="1" fill="#FFFFFF" />
+<rect x="9" y="11" width="1" height="2" fill="#FFFFFF" />
+<rect x="10" y="11" width="1" height="1" fill="#0EAF9B" />
+<rect x="10" y="12" width="1" height="1" fill="#FFFFFF" />
+<rect x="5" y="13" width="8" height="2" fill="#30E1B9" />
+<rect x="3" y="15" width="11" height="1" fill="#0B8A8F" />
 </svg>

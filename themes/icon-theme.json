@@ -18,8 +18,8 @@
     "api_open": {
       "iconPath": "../icons/folders/api-open.svg"
     },
-    "archive": {
-      "iconPath": "../icons/files/archive.svg"
+    "zip": {
+      "iconPath": "../icons/files/zip.svg"
     },
     "ase": {
       "iconPath": "../icons/files/ase.svg"
@@ -578,14 +578,14 @@
   "folder": "_folder",
   "folderExpanded": "_folder_open",
   "fileExtensions": {
-    "7z": "archive",
+    "7z": "zip",
     "ase": "ase",
     "aseprite": "ase",
     "astro": "astro",
     "avi": "vid",
     "bash": "shell",
     "bat": "bat",
-    "bz2": "archive",
+    "bz2": "zip",
     "c": "c",
     "cc": "cpp",
     "cjs": "js",
@@ -606,7 +606,7 @@
     "go": "go",
     "gql": "gql",
     "graphql": "gql",
-    "gz": "archive",
+    "gz": "zip",
     "h": "h",
     "htm": "html",
     "html": "html",
@@ -649,7 +649,7 @@
     "pyi": "py",
     "pyw": "py",
     "r": "r",
-    "rar": "archive",
+    "rar": "zip",
     "razor": "razor",
     "rb": "ruby",
     "route.js": "router",
@@ -671,17 +671,17 @@
     "svelte": "svelte",
     "svg": "svg",
     "swift": "swift",
-    "tar": "archive",
-    "tar.bz2": "archive",
-    "tar.gz": "archive",
-    "tar.xz": "archive",
-    "tar.zst": "archive",
+    "tar": "zip",
+    "tar.bz2": "zip",
+    "tar.gz": "zip",
+    "tar.xz": "zip",
+    "tar.zst": "zip",
     "targets": "xml",
     "tf": "terraform",
     "tf.json": "terraform",
     "tfvars": "terraform",
     "tfvars.json": "terraform",
-    "tgz": "archive",
+    "tgz": "zip",
     "toml": "toml",
     "ts": "ts",
     "tsx": "tsx",
@@ -696,14 +696,14 @@
     "woff2": "font",
     "xlsx": "xlsx",
     "xml": "xml",
-    "xz": "archive",
+    "xz": "zip",
     "yaml": "yaml",
     "yml": "yaml",
     "zig": "zig",
-    "zip": "archive",
+    "zip": "zip",
     "zon": "zig",
     "zsh": "shell",
-    "zst": "archive"
+    "zst": "zip"
   },
   "fileNames": {
     ".angular-cli.json": "angular",

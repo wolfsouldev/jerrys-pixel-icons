@@ -1,9 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
-  <title>Terraform</title>
-  <desc>Original pixel-art infrastructure blocks. Visual reference: HashiCorp Terraform https://developer.hashicorp.com/terraform . See ICON_NOTICES.txt.</desc>
-  <path fill="#674094" d="M2 2h2v1h2v1h1v5H5V8H3V7H2zM7 5h2v1h2v1h1v5h-2v-1H8v-1H7zM7 11h2v1h2v1h1v3h-2v-1H8v-1H7z"/>
-  <path fill="#A37CE3" d="M1 1h2v1h2v1h1v5H4V7H2V6H1z"/>
-  <path fill="#8756C1" d="M6 4h2v1h2v1h1v5H9v-1H7V9H6zM6 10h2v1h2v1h1v3H9v-1H7v-1H6z"/>
-  <path fill="#6C41A6" d="M14 1h1v5h-2v1h-2v1h-1V3h2V2h2z"/>
-  <path fill="#CFB7FA" d="M1 1h2v1H1zM6 4h2v1H6zM6 10h2v1H6z"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="1" y="1" width="2" height="1" fill="#EAADED" />
+<rect x="1" y="2" width="1" height="2" fill="#EAADED" />
+<rect x="2" y="2" width="2" height="4" fill="#A884F3" />
+<rect x="4" y="3" width="1" height="4" fill="#A884F3" />
+<rect x="14" y="3" width="1" height="1" fill="#EAADED" />
+<rect x="1" y="4" width="1" height="2" fill="#A884F3" />
+<rect x="5" y="4" width="1" height="4" fill="#6B3E75" />
+<rect x="6" y="4" width="2" height="1" fill="#EAADED" />
+<rect x="12" y="4" width="1" height="1" fill="#EAADED" />
+<rect x="13" y="4" width="2" height="4" fill="#A884F3" />
+<rect x="15" y="4" width="1" height="5" fill="#6B3E75" />
+<rect x="6" y="5" width="1" height="2" fill="#EAADED" />
+<rect x="7" y="5" width="3" height="4" fill="#A884F3" />
+<rect x="11" y="5" width="1" height="3" fill="#EAADED" />
+<rect x="12" y="5" width="1" height="4" fill="#A884F3" />
+<rect x="2" y="6" width="1" height="1" fill="#6B3E75" />
+<rect x="3" y="6" width="1" height="1" fill="#A884F3" />
+<rect x="10" y="6" width="1" height="5" fill="#6B3E75" />
+<rect x="4" y="7" width="1" height="1" fill="#6B3E75" />
+<rect x="6" y="7" width="1" height="1" fill="#A884F3" />
+<rect x="11" y="8" width="1" height="2" fill="#A884F3" />
+<rect x="13" y="8" width="1" height="1" fill="#A884F3" />
+<rect x="14" y="8" width="1" height="2" fill="#6B3E75" />
+<rect x="6" y="9" width="1" height="3" fill="#EAADED" />
+<rect x="8" y="9" width="1" height="1" fill="#6B3E75" />
+<rect x="9" y="9" width="1" height="1" fill="#A884F3" />
+<rect x="12" y="9" width="2" height="1" fill="#6B3E75" />
+<rect x="7" y="10" width="2" height="4" fill="#A884F3" />
+<rect x="12" y="10" width="1" height="1" fill="#6B3E75" />
+<rect x="9" y="11" width="1" height="4" fill="#A884F3" />
+<rect x="6" y="12" width="1" height="1" fill="#A884F3" />
+<rect x="10" y="12" width="1" height="4" fill="#6B3E75" />
+<rect x="8" y="14" width="1" height="1" fill="#A884F3" />
+<rect x="9" y="15" width="1" height="1" fill="#6B3E75" />
 </svg>
