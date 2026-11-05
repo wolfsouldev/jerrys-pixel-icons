@@ -18,9 +18,6 @@
     "api_open": {
       "iconPath": "../icons/folders/api-open.svg"
     },
-    "zip": {
-      "iconPath": "../icons/files/zip.svg"
-    },
     "ase": {
       "iconPath": "../icons/files/ase.svg"
     },
@@ -572,6 +569,9 @@
     },
     "zig": {
       "iconPath": "../icons/files/zig.svg"
+    },
+    "zip": {
+      "iconPath": "../icons/files/zip.svg"
     }
   },
   "file": "_file",
