@@ -198,9 +198,11 @@ permisos de escritura de Pages y OIDC, dentro del entorno protegido `github-page
 Después se verifican por HTTP los archivos públicos contra el commit desplegado.
 Consulta [la guía de publicación](gallery/README.md#publicar-con-github-pages).
 
-La extensión solo se publica cuando el workflow detecta un aumento de
-`package.json.version` con notas fechadas en `CHANGELOG.md` al subir a `master`.
-Los cambios normales de código/iconos no la publican. Para preparar una versión,
+La extensión solo se publica cuando el workflow de validación de `master` termina
+con éxito y el workflow posterior detecta un aumento de `package.json.version`
+con notas fechadas en `CHANGELOG.md`. La publicación reutiliza el VSIX producido
+por ese CI; los cambios normales de código/iconos no publican una nueva versión.
+Para preparar una versión,
 revisarla y entender la aprobación de Marketplace/OIDC, consulta
 [RELEASE.md](RELEASE.md). No se crean GitHub Releases. Las acciones están fijadas
 a commits: revisa su código y conserva una referencia de versión al actualizarlas.

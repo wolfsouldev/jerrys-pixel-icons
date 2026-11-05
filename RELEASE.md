@@ -1,11 +1,12 @@
 # Publicar una versión de Jerry's Pixel Icons
 
 La web y la extensión se publican por separado. El CI despliega la web al subir
-cambios probados a `master`. El workflow **Publish extension** también escucha
-esos pushes, pero solo empaqueta y publica cuando `package.json.version` subió
-respecto al commit anterior y el changelog tiene notas fechadas para esa versión.
-Los demás commits no publican en Marketplace. `Prepare extension release` sigue
-siendo manual y abre un PR revisable para cada versión.
+cambios probados a `master`. **Publish extension** espera a que termine con éxito
+el workflow **Validate and package** en `master`; solo publica si `package.json.version`
+subió respecto al commit anterior y el changelog contiene notas fechadas. Reutiliza
+el VSIX de Node 24 que ya produjo CI, así no vuelve a instalar Chromium. Los demás
+commits no publican en Marketplace. `Prepare extension release` sigue siendo manual
+y abre un PR revisable para cada versión.
 
 ## Configuración inicial (una sola vez)
 
@@ -42,11 +43,11 @@ La sesión de GitHub no concede por sí sola acceso al publisher de Microsoft.
 3. El workflow actualiza automáticamente `package.json`, mueve las notas a una
    sección fechada, prueba el paquete y abre un PR `release/vX.Y.Z`.
 4. Revisa el PR, las notas y el aspecto en VS Code. El PR no publica.
-5. Haz merge del PR en `master`. Ese cambio de versión dispara automáticamente
-   las pruebas Node 22/24, empaquetado, verificaciones y pruebas de navegador.
-   Tras superarlas, el environment `marketplace` solicita la aprobación
-   configurada; después publica el mismo VSIX probado con OIDC y verifica que
-   los bytes públicos coinciden.
+5. Haz merge del PR en `master`. Tras pasar las pruebas Node 22/24, el empaquetado,
+   las verificaciones y las pruebas de navegador del workflow **Validate and package**,
+   **Publish extension** reutiliza el VSIX de Node 24 de esa ejecución. El environment
+   `marketplace` solicita la aprobación configurada; después publica ese mismo
+   archivo con OIDC y verifica que los bytes públicos coinciden.
 
 Alternativa local (árbol de trabajo limpio): `pnpm run release:prepare minor`,
 revisar el diff, ejecutar las pruebas y abrir un PR con los dos archivos cambiados.
@@ -58,8 +59,11 @@ incremento por un error al crear el PR ni hagas force-push.
 
 Si el workflow automático falló, revisa primero el error. En **Actions → Publish
 extension → Run workflow**, selecciona `master` e introduce la versión exacta ya
-revisada. El flujo valida identidad/notas, vuelve a probar y empaquetar, y usa
-`--skip-duplicate` para poder recuperar un timeout tras una publicación aceptada.
+revisada y el ID de una ejecución exitosa de **Validate and package** que contenga
+el artefacto `jerrys-pixel-icons-node-24`. El flujo comprueba rama, éxito, versión,
+antigüedad y ascendencia de esa ejecución, vuelve a revisar el VSIX y usa
+`--skip-duplicate` para recuperar un timeout tras una publicación aceptada, sin
+repetir la instalación de Chromium.
 La comprobación SHA-256 falla si Marketplace contiene bytes distintos; en ese caso
 no trates de sobrescribir esa versión: revisa Marketplace antes de preparar otra.
 El environment `marketplace` mantiene la aprobación requerida también en el

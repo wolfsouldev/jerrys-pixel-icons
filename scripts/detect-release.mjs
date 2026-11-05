@@ -35,7 +35,9 @@ export function detectReleaseVersion({ eventName, beforeVersion, currentVersion,
         requireReleaseNotes(currentVersion, changelog);
         return currentVersion;
     }
-    if (eventName !== 'push') { throw new Error(`Unsupported release event: ${eventName}`); }
+    if (eventName !== 'push' && eventName !== 'workflow_run') {
+        throw new Error(`Unsupported release event: ${eventName}`);
+    }
     versionParts(beforeVersion);
     if (beforeVersion === currentVersion) { return ''; }
     if (compareVersions(currentVersion, beforeVersion) <= 0) {
@@ -61,7 +63,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
         const eventName = process.env.RELEASE_EVENT_NAME;
         const version = detectReleaseVersion({
             eventName,
-            beforeVersion: eventName === 'push' ? readPreviousVersion(process.env.RELEASE_BEFORE_SHA) : undefined,
+            beforeVersion: eventName === 'push' || eventName === 'workflow_run' ?
+                readPreviousVersion(process.env.RELEASE_BEFORE_SHA) : undefined,
             currentVersion: manifest.version,
             requestedVersion: process.env.REQUESTED_VERSION,
             changelog: readFileSync('CHANGELOG.md', 'utf8'),

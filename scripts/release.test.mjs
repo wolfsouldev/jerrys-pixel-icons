@@ -6,6 +6,7 @@ import { test } from 'node:test';
 import { parseDocument } from 'yaml';
 import { detectReleaseVersion } from './detect-release.mjs';
 import { nextVersion, prepareRelease } from './prepare-release.mjs';
+import { validateCiArtifact } from './verify-ci-artifact.mjs';
 
 test('stable versions increment explicitly without prerelease ambiguity', () => {
     assert.equal(nextVersion('0.3.0', 'patch'), '0.3.1');
@@ -42,16 +43,16 @@ test('release preparation is manual; publishing detects version changes on maste
     const prepare = workflow('prepare-release');
     const publish = workflow('publish');
     assert.deepEqual(Object.keys(prepare.on), ['workflow_dispatch']);
-    assert.deepEqual(Object.keys(publish.on), ['push', 'workflow_dispatch']);
-    assert.deepEqual(publish.on.push.branches, ['master']);
+    assert.deepEqual(Object.keys(publish.on), ['workflow_run', 'workflow_dispatch']);
+    assert.deepEqual(publish.on.workflow_run.workflows, ['Validate and package']);
+    assert.deepEqual(publish.on.workflow_run.branches, ['master']);
     assert.deepEqual(prepare.permissions, { contents: 'read' });
     assert.deepEqual(publish.permissions, { contents: 'read' });
     assert.equal(prepare.concurrency['cancel-in-progress'], false);
     assert.equal(publish.concurrency['cancel-in-progress'], false);
     assert.equal(prepare.jobs.prepare.if, "github.ref == 'refs/heads/master'");
-    assert.equal(publish.jobs['detect-release'].if, "github.ref == 'refs/heads/master'");
-    assert.equal(publish.jobs.validate.needs, 'detect-release');
-    assert.equal(publish.jobs.validate.if, "needs.detect-release.outputs.version != ''");
+    assert.match(publish.jobs['detect-release'].if, /workflow_run\.conclusion == 'success'/);
+    assert.match(publish.jobs['detect-release'].if, /workflow_dispatch.*refs\/heads\/master/s);
     assert.equal(publish.jobs.publish.if, "needs.detect-release.outputs.version != ''");
     for (const config of [prepare, publish]) {
         for (const job of Object.values(config.jobs)) {
@@ -68,27 +69,69 @@ test('release preparation is manual; publishing detects version changes on maste
 
 test('publishing uses an approved, verified artifact and no long-lived secret', () => {
     const { jobs } = workflow('publish');
-    assert.deepEqual(jobs.publish.needs, ['detect-release', 'validate']);
+    assert.deepEqual(jobs['verify-artifact'].needs, 'detect-release');
+    assert.deepEqual(jobs.publish.needs, ['detect-release', 'verify-artifact']);
     assert.equal(jobs.publish.environment.name, 'marketplace');
+    assert.equal(jobs['verify-artifact'].environment, undefined);
+    assert.deepEqual(jobs['verify-artifact'].permissions, { actions: 'read', contents: 'read' });
     assert.deepEqual(jobs.publish.permissions, { contents: 'read', 'id-token': 'write' });
     const commands = jobs.publish.steps.map(step => step.run).filter(Boolean);
-    assert.ok(commands.indexOf('pnpm run package:check') < commands.findIndex(cmd => cmd.includes('vsce publish')));
     assert.ok(commands.some(cmd => cmd.includes('--oidc --skip-duplicate --packagePath')));
     assert.equal(commands.at(-1), 'pnpm run release:verify');
-    assert.doesNotMatch(JSON.stringify(jobs.publish), /secrets\.|vsce publish (minor|patch|major)/);
-    assert.ok(jobs.validate.steps.some(step => step.run === 'pnpm run test:gallery'));
-    assert.ok(jobs.publish.steps.some(step => step.uses?.startsWith('actions/download-artifact@')));
+    const verifyCommands = jobs['verify-artifact'].steps.map(step => step.run).filter(Boolean);
+    assert.ok(verifyCommands.indexOf('pnpm run package:check') >= 0);
+    assert.ok(verifyCommands.indexOf('pnpm run package:check') < verifyCommands.findIndex(cmd => cmd.includes('sha256sum')));
+    assert.doesNotMatch(JSON.stringify(jobs), /secrets\.|vsce publish (minor|patch|major)/);
+    assert.equal([...commands, ...verifyCommands].some(cmd => cmd.includes('playwright install')), false);
+    assert.ok(verifyCommands.some(cmd => cmd.includes('scripts/verify-ci-artifact.mjs')));
+    const download = jobs['verify-artifact'].steps.find(step => step.uses?.startsWith('actions/download-artifact@'));
+    assert.equal(download.with.name, 'jerrys-pixel-icons-node-24');
+    assert.equal(download.with['run-id'], '${{ needs.detect-release.outputs.source_ci_run_id }}');
+    assert.equal(download.with['github-token'], '${{ github.token }}');
+    const publishDownload = jobs.publish.steps.find(step => step.uses?.startsWith('actions/download-artifact@'));
+    assert.equal(publishDownload.with.name, 'verified-marketplace-vsix');
+    assert.ok(workflow('ci').jobs['gallery-browser'].steps.some(step => step.run === 'pnpm run test:gallery'));
 });
 
 test('only a strictly higher manifest version with dated notes triggers automatic publish', () => {
     const changelog = '# Changes\n\n## [Unreleased]\n\n## [0.4.0] - 2026-11-05\n\n- New icons.\n';
     const release = { eventName: 'push', beforeVersion: '0.3.0', currentVersion: '0.4.0', changelog };
     assert.equal(detectReleaseVersion(release), '0.4.0');
+    assert.equal(detectReleaseVersion({ ...release, eventName: 'workflow_run' }), '0.4.0');
     assert.equal(detectReleaseVersion({ ...release, currentVersion: '0.3.0', beforeVersion: '0.3.0' }), '');
     assert.throws(() => detectReleaseVersion({ ...release, currentVersion: '0.2.9' }), /must be greater/);
     assert.throws(() => detectReleaseVersion({ ...release, changelog: '# Changes' }), /dated release notes/);
     assert.equal(detectReleaseVersion({ ...release, eventName: 'workflow_dispatch', requestedVersion: '0.4.0' }), '0.4.0');
     assert.throws(() => detectReleaseVersion({ ...release, eventName: 'workflow_dispatch', requestedVersion: '0.5.0' }), /does not match/);
+});
+
+test('only a successful master CI run with the exact version and artifact can be published', () => {
+    const sha = 'a'.repeat(40);
+    const run = {
+        id: 123,
+        name: 'Validate and package',
+        head_branch: 'master',
+        head_sha: sha,
+        status: 'completed',
+        conclusion: 'success',
+    };
+    const artifacts = [{ name: 'jerrys-pixel-icons-node-24', expired: false, size_in_bytes: 1024 }];
+    const input = {
+        run,
+        artifacts,
+        currentSha: sha,
+        expectedVersion: '0.4.0',
+        expectedRunId: 123,
+        isAncestor: () => true,
+        readManifestAt: () => ({ name: 'jerrys-pixel-icons', publisher: 'MelissaGutierrez', version: '0.4.0' }),
+    };
+    assert.equal(validateCiArtifact(input), artifacts[0]);
+    assert.throws(() => validateCiArtifact({ ...input, isAncestor: () => false }), /not an ancestor/);
+    assert.throws(() => validateCiArtifact({ ...input, readManifestAt: () => ({ name: 'jerrys-pixel-icons', publisher: 'MelissaGutierrez', version: '0.3.0' }) }), /does not match requested/);
+    assert.throws(() => validateCiArtifact({ ...input, readManifestAt: () => ({ name: 'other-extension', publisher: 'MelissaGutierrez', version: '0.4.0' }) }), /expected Jerry/);
+    assert.throws(() => validateCiArtifact({ ...input, expectedRunId: 456 }), /different CI run/);
+    assert.throws(() => validateCiArtifact({ ...input, run: { ...run, conclusion: 'failure' } }), /successful Validate and package/);
+    assert.throws(() => validateCiArtifact({ ...input, artifacts: [{ ...artifacts[0], expired: true }] }), /no unexpired Node 24/);
 });
 
 test('public verification retries processing delays but rejects different package bytes', async () => {
