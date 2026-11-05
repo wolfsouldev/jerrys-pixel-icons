@@ -6,6 +6,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-05
+
 ### Fixed
 
 - Correct routing associations to reference the existing `router` icon.
