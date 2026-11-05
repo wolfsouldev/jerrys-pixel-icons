@@ -54,7 +54,10 @@ logo path: assets/logo.png
     <img src="https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/preview-files.webp" >
 </details>
 
-![Examples][examples]
+<details>
+    <summary>Folders</summary>
+    <img src="https://raw.githubusercontent.com/wolfsouldev/jerrys-pixel-icons/refs/heads/master/assets/preview-folders.webp" >
+</details>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -142,13 +145,9 @@ closed and expanded folders. Automated checks do not replace this rendering chec
 <!-- LICENSE -->
 ## Icon Gallery
 
-The additional pixel-art pack includes PDF, archives, fonts, Jupyter Notebook,
-Angular, Nuxt, Vitest, Playwright, Kubernetes and Terraform. Search **`extra-pack-1`**
-in the gallery to see all ten together. See [ICON_NOTICES.txt](ICON_NOTICES.txt)
-for artwork credits and license exceptions.
+See [ICON_NOTICES.txt](ICON_NOTICES.txt) for artwork credits and license exceptions.
 
-Explore the collection locally, with search, file/folder filters, open-folder
-previews, light/dark backgrounds, association details and original SVG downloads:
+Explore the collection locally, with search, file/folder filters, open-folder previews, light/dark backgrounds, association details and original SVG downloads:
 
 ```sh
 pnpm run gallery:preview
@@ -179,7 +178,7 @@ and VSIX. Brand names and trademarks belong to their respective owners.
 
  ★ Developer - [linkedin.com/in/alejandro-fajardo](https://www.linkedin.com/in/alejandro-fajardo-1548a0245)
 
- ★ Icon Artist - [linkedin.com/in/melissa-gutierrez](https://www.linkedin.com/in/melissa-gutierrez-47356b2b6/)
+ ★ Icon Artist - [linkedin.com/in/melisapo](https://www.linkedin.com/in/melisapo/)
 
  ★ Project Link: [https://github.com/wolfsouldev/jerrys-pixel-icons](https://github.com/wolfsouldev/jerrys-pixel-icons)
 
